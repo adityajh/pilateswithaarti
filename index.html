@@ -1,0 +1,2656 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BodyTalk × Pilates with Aarti — a brand discovery conversation</title>
+<meta name="description" content="A 30-35 minute conversation about who the brand is for, what it sounds like, and what it stands on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f4f1ea;
+  --ink:#221f1c;
+  --muted:#6b635a;
+  --hairline:#d9d3c5;
+  --accent:#92432d;
+  --accent-soft:#c26e4e;
+  --card:#fbf9f4;
+  --shadow:0 1px 2px rgba(34,31,28,.04);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --container:720px;
+  --container-wide:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ========== Layout ========== */
+
+.wrap{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 28px;
+}
+.wrap.wide{ max-width:var(--container-wide); }
+
+section[data-section]{
+  padding:80px 0 160px;
+  min-height:60vh;
+}
+section[data-section][hidden]{display:none !important}
+
+/* ========== Progress bar ========== */
+
+.progress{
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  border-bottom:1px solid var(--hairline);
+  z-index:10;
+  padding:14px 28px;
+}
+.progress-track{
+  max-width:var(--container-wide);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--muted);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.progress-bar{
+  flex:1;
+  height:2px;
+  background:var(--hairline);
+  position:relative;
+  overflow:hidden;
+}
+.progress-bar-fill{
+  position:absolute;
+  inset:0 auto 0 0;
+  background:var(--accent);
+  width:0;
+  transition:width 360ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* ========== Typography ========== */
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:24px;
+}
+h1.title{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:64px;
+  line-height:1.05;
+  letter-spacing:-.01em;
+  margin:0 0 28px;
+  color:var(--ink);
+}
+h2.headline{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:42px;
+  line-height:1.15;
+  letter-spacing:-.01em;
+  margin:0 0 22px;
+  color:var(--ink);
+}
+h3.subhead{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:26px;
+  line-height:1.3;
+  margin:48px 0 14px;
+}
+.intro{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink);
+  margin:0 0 32px;
+}
+.intro.large{ font-size:20px }
+.muted{color:var(--muted)}
+.hint{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+  margin-top:6px;
+}
+.label{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:15px;
+  margin-bottom:10px;
+  display:block;
+  color:var(--ink);
+}
+.required{color:var(--accent);font-weight:500;font-size:13px;margin-left:6px}
+
+@media (max-width:768px){
+  h1.title{font-size:42px}
+  h2.headline{font-size:30px}
+  h3.subhead{font-size:22px;margin-top:36px}
+  .intro{font-size:16px}
+  section[data-section]{padding:48px 0 120px}
+}
+
+/* ========== Callout ========== */
+
+.callout{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:32px 34px;
+  margin:36px 0;
+}
+.callout ol{margin:0;padding-left:20px}
+.callout ol li{margin:14px 0;line-height:1.55}
+.callout ol li strong{font-weight:600;color:var(--ink)}
+.callout p{margin:8px 0;line-height:1.55}
+.callout em{color:var(--muted);font-style:italic}
+
+/* ========== Form controls ========== */
+
+input[type="text"],
+input[type="number"],
+textarea{
+  font-family:var(--sans);
+  font-size:16px;
+  color:var(--ink);
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:14px 16px;
+  width:100%;
+  border-radius:0;
+  appearance:none;
+  -webkit-appearance:none;
+  outline:none;
+  transition:border-color 160ms ease;
+  line-height:1.5;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:90px;font-family:var(--sans)}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:.7}
+
+.field{margin:24px 0}
+.field-group{margin:48px 0}
+
+/* Number input prefix */
+.num-row{display:flex;align-items:center;gap:14px;margin-top:8px}
+.num-row .prefix{font-family:var(--serif);font-size:24px;color:var(--muted);width:auto}
+.num-row input[type="number"]{flex:1;max-width:280px}
+.num-row .anchor{font-size:13px;color:var(--muted);margin-left:4px}
+
+/* ========== Buttons ========== */
+
+.btn{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:15px;
+  letter-spacing:.02em;
+  background:var(--ink);
+  color:#fff;
+  border:none;
+  padding:14px 28px;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:background 160ms ease,opacity 160ms ease;
+  border-radius:0;
+}
+.btn:hover{background:var(--accent)}
+.btn:disabled{opacity:.4;cursor:not-allowed;background:var(--muted)}
+.btn-ghost{
+  background:transparent;
+  color:var(--muted);
+  padding:14px 0;
+}
+.btn-ghost:hover{background:transparent;color:var(--accent)}
+.btn-large{padding:18px 36px;font-size:16px}
+
+/* ========== Footer ========== */
+
+.form-footer{
+  position:sticky;
+  bottom:0;
+  background:var(--bg);
+  border-top:1px solid var(--hairline);
+  z-index:10;
+  padding:16px 28px;
+}
+.footer-row{
+  max-width:var(--container-wide);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.footer-row .left,.footer-row .right{display:flex;gap:14px;align-items:center}
+.footer-row .save-link{font-size:13px;color:var(--muted);text-decoration:underline;cursor:pointer}
+.footer-row .save-link:hover{color:var(--accent)}
+.error-banner{
+  background:#fde7e3;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:10px 14px;
+  font-size:14px;
+  margin:12px 0 0;
+  display:none;
+  max-width:var(--container-wide);
+  margin-left:auto;
+  margin-right:auto;
+}
+.error-banner.show{display:block}
+
+@media (max-width:768px){
+  .form-footer{padding:12px 16px}
+  .btn{padding:12px 22px;font-size:14px}
+  .btn-large{padding:14px 26px;font-size:15px}
+  .progress{padding:10px 16px}
+  .progress-track{font-size:11px;gap:10px}
+}
+
+/* ========== Chips ========== */
+
+.chip-counter{
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--muted);
+  margin:8px 0 16px;
+  font-weight:500;
+}
+.chip-counter strong{color:var(--accent)}
+.chip-pool{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0;
+}
+.chip{
+  font-family:var(--sans);
+  font-size:14px;
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:9px 16px;
+  cursor:pointer;
+  user-select:none;
+  transition:all 140ms ease;
+}
+.chip:hover{border-color:var(--accent-soft);color:var(--accent)}
+.chip.selected{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+.chip.must-not.selected{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.chip-pools{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:768px){.chip-pools{grid-template-columns:1fr;gap:36px}}
+
+/* ========== Slider ========== */
+
+.slider-block{margin:32px 0}
+.slider-ends{
+  display:flex;
+  justify-content:space-between;
+  font-family:var(--sans);
+  font-size:14px;
+  color:var(--muted);
+  margin:0 0 8px;
+  font-weight:500;
+}
+.slider-ends span:first-child{text-align:left}
+.slider-ends span:last-child{text-align:right}
+input[type="range"]{
+  width:100%;
+  -webkit-appearance:none;
+  appearance:none;
+  background:transparent;
+  height:30px;
+  cursor:pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  height:2px;
+  background:var(--hairline);
+}
+input[type="range"]::-moz-range-track{
+  height:2px;
+  background:var(--hairline);
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:18px;
+  height:18px;
+  background:var(--accent);
+  border-radius:50%;
+  margin-top:-8px;
+  border:none;
+  cursor:pointer;
+}
+input[type="range"]::-moz-range-thumb{
+  width:18px;
+  height:18px;
+  background:var(--accent);
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+}
+.slider-readout{
+  text-align:center;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--muted);
+  margin-top:4px;
+  font-variant-numeric:tabular-nums;
+}
+
+/* Type-specimen slider */
+.type-spec{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  font-family:var(--serif);
+  margin-bottom:6px;
+  gap:24px;
+}
+.type-spec .left,.type-spec .right{
+  font-size:30px;
+  line-height:1.1;
+  color:var(--ink);
+}
+.type-spec .right{text-align:right}
+.type-spec.geo .left{font-family:'Inter',sans-serif;font-weight:500;letter-spacing:.04em}
+.type-spec.book .left{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.4}
+.type-spec.book .right{font-family:var(--serif);font-size:32px;font-weight:500;letter-spacing:-.01em}
+.type-spec.ornate .left{font-family:var(--serif);font-style:italic;font-weight:300}
+.type-spec.ornate .right{font-family:var(--serif);font-weight:300}
+
+/* Gradient slider */
+.gradient-track{
+  position:relative;
+  height:14px;
+  border-radius:0;
+  margin-bottom:-30px;
+  pointer-events:none;
+}
+.gradient-track.light{background:linear-gradient(90deg,#f0e8d8 0%,#3a3a3a 100%)}
+.gradient-track.temp{background:linear-gradient(90deg,#e08246 0%,#82a8c9 100%)}
+.gradient-track.expose{background:linear-gradient(90deg,#fff8e8 0%,#1a1814 100%)}
+.gradient-track.locale{background:linear-gradient(90deg,#d99746 0%,#7e8589 100%)}
+
+/* ========== Voice cards / drag-rank ========== */
+
+.rank-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin:24px 0;
+}
+.rank-item{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:20px 24px;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  transition:border-color 160ms ease;
+}
+.rank-item:hover{border-color:var(--accent-soft)}
+.rank-position{
+  font-family:var(--serif);
+  font-size:36px;
+  line-height:1;
+  color:var(--accent);
+  font-weight:400;
+  min-width:48px;
+}
+.rank-content{flex:1}
+.rank-content .rank-eyebrow{
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.rank-content .rank-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  margin:0 0 8px;
+  line-height:1.25;
+}
+.rank-content .rank-body{
+  font-size:15px;
+  line-height:1.55;
+  color:var(--ink);
+}
+.rank-content .rank-body em{color:var(--muted)}
+.rank-controls{display:flex;flex-direction:column;gap:6px}
+.rank-btn{
+  background:transparent;
+  border:1px solid var(--hairline);
+  width:32px;
+  height:32px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  color:var(--muted);
+  transition:all 140ms ease;
+  font-family:var(--sans);
+}
+.rank-btn:hover{border-color:var(--accent);color:var(--accent)}
+.rank-btn:disabled{opacity:.3;cursor:not-allowed}
+
+/* ========== Moodboard ========== */
+
+.world-card{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  margin:48px 0 64px;
+  padding:0;
+}
+.world-card .tearsheet-wrap{
+  position:relative;
+  background:#f4f1ea;
+}
+.world-card img.tearsheet{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0 auto;
+}
+.world-card .world-actions{
+  padding:32px 40px 36px;
+  border-top:1px solid var(--hairline);
+  background:var(--card);
+}
+.world-card .world-id{
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.world-card .world-title{
+  font-family:var(--serif);
+  font-size:32px;
+  font-weight:400;
+  margin:0 0 24px;
+}
+.star-row{
+  display:flex;
+  gap:12px;
+  margin:18px 0 28px;
+  align-items:center;
+}
+.star-row .star-prompt{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:500;
+  margin-right:14px;
+}
+.star{
+  font-size:26px;
+  color:var(--hairline);
+  cursor:pointer;
+  user-select:none;
+  transition:color 120ms ease;
+  line-height:1;
+}
+.star:hover,.star.lit{color:var(--accent)}
+.world-card .feedback-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+@media (max-width:768px){
+  .world-card .feedback-grid{grid-template-columns:1fr;gap:18px}
+  .world-card .world-actions{padding:24px 22px}
+  .world-card .world-title{font-size:26px}
+}
+
+/* ========== Photography multi-pick ========== */
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:14px;
+  margin:18px 0;
+}
+@media (max-width:900px){.photo-grid{grid-template-columns:1fr 1fr}}
+.photo-tile{
+  position:relative;
+  aspect-ratio:4/3;
+  background:var(--hairline);
+  border:2px solid var(--hairline);
+  cursor:pointer;
+  overflow:hidden;
+  transition:all 160ms ease;
+}
+.photo-tile img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 240ms ease;
+}
+.photo-tile:hover{border-color:var(--accent-soft)}
+.photo-tile:hover img{transform:scale(1.02)}
+.photo-tile.lead{border-color:var(--accent)}
+.photo-tile.support{border-color:var(--accent-soft)}
+.photo-tile .label-bar{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  background:linear-gradient(to top, rgba(34,31,28,.85) 0%, rgba(34,31,28,0) 100%);
+  color:#fff;
+  font-family:var(--sans);
+  font-size:12px;
+  padding:24px 12px 10px;
+  line-height:1.3;
+  pointer-events:none;
+}
+.photo-tile .badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--accent);
+  color:#fff;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+.photo-tile.lead .badge,.photo-tile.support .badge{display:flex}
+
+/* ========== Palette cards ========== */
+
+.palette-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:18px 0;
+}
+@media (max-width:768px){.palette-grid{grid-template-columns:1fr}}
+.palette-card{
+  background:var(--card);
+  border:2px solid var(--hairline);
+  padding:24px;
+  cursor:pointer;
+  transition:border-color 160ms ease;
+}
+.palette-card:hover{border-color:var(--accent-soft)}
+.palette-card.selected{border-color:var(--accent)}
+.palette-swatches{display:flex;height:60px;margin-bottom:14px}
+.palette-swatches > div{flex:1}
+.palette-card h4{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:400;
+  margin:0 0 6px;
+}
+.palette-card p{
+  font-size:14px;
+  line-height:1.5;
+  color:var(--muted);
+  margin:0;
+  font-style:italic;
+}
+
+/* ========== Positioning maps ========== */
+
+.map-card{
+  margin:48px 0;
+  padding:0;
+}
+.map-card h3{margin-top:0}
+.map-axes-prose{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:18px 22px;
+  margin:14px 0 22px;
+  font-size:14px;
+  line-height:1.6;
+}
+.map-axes-prose p{margin:8px 0}
+.map-axes-prose strong{font-weight:500}
+.position-map{
+  position:relative;
+  background:var(--card);
+  border:1px solid var(--hairline);
+  aspect-ratio:1;
+  max-width:600px;
+  margin:0 auto;
+  cursor:crosshair;
+}
+.position-map svg{position:absolute;inset:0;width:100%;height:100%}
+.position-map .axis-label{
+  position:absolute;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  pointer-events:none;
+}
+.position-map .axis-label.top{top:8px;left:50%;transform:translateX(-50%)}
+.position-map .axis-label.bottom{bottom:8px;left:50%;transform:translateX(-50%)}
+.position-map .axis-label.left{left:8px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left center}
+.position-map .axis-label.right{right:8px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center}
+.position-map circle.dot-today{fill:#0f2a44}
+.position-map circle.dot-target{fill:var(--accent)}
+.dot-legend{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  margin:14px 0 0;
+  font-size:13px;
+  color:var(--muted);
+  flex-wrap:wrap;
+}
+.dot-legend .dot-key{display:flex;align-items:center;gap:8px}
+.dot-legend .dot-key .swatch{width:12px;height:12px;border-radius:50%}
+.dot-legend .dot-key .swatch.today{background:#0f2a44}
+.dot-legend .dot-key .swatch.target{background:var(--accent)}
+.dot-legend .reset{
+  background:transparent;
+  border:1px solid var(--hairline);
+  padding:4px 12px;
+  font-size:12px;
+  cursor:pointer;
+  color:var(--muted);
+  font-family:var(--sans);
+}
+.dot-legend .reset:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ========== Radio cards ========== */
+
+.radio-cards{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin:18px 0;
+}
+.radio-card{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:20px 24px;
+  cursor:pointer;
+  transition:border-color 160ms ease;
+}
+.radio-card:hover{border-color:var(--accent-soft)}
+.radio-card.selected{border-color:var(--accent)}
+.radio-card input[type="radio"]{display:none}
+.radio-card .rc-title{
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:16px;
+  margin-bottom:4px;
+}
+.radio-card .rc-desc{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.55;
+}
+.radio-card.selected .rc-title{color:var(--accent)}
+
+/* Compact radio */
+.radio-row{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:18px 0;
+}
+.radio-row label{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:12px 0;
+  cursor:pointer;
+  border-bottom:1px solid var(--hairline);
+  transition:color 140ms ease;
+}
+.radio-row label:hover{color:var(--accent)}
+.radio-row label:last-child{border-bottom:none}
+.radio-row input[type="radio"]{margin-top:6px;accent-color:var(--accent)}
+.radio-row label .desc{font-size:14px;color:var(--muted);margin-top:2px}
+
+/* ========== Checkbox list ========== */
+
+.check-list{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin:18px 0;
+}
+.check-list label{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:12px 0;
+  cursor:pointer;
+  border-bottom:1px solid var(--hairline);
+  transition:color 140ms ease;
+}
+.check-list label:hover{color:var(--accent)}
+.check-list input[type="checkbox"]{margin-top:5px;width:18px;height:18px;accent-color:var(--accent)}
+
+/* ========== Word counter ========== */
+
+.word-counter{
+  font-size:12px;
+  color:var(--muted);
+  text-align:right;
+  margin-top:4px;
+  font-variant-numeric:tabular-nums;
+}
+.word-counter.over{color:var(--accent)}
+
+/* ========== Review summary ========== */
+
+.summary-card{
+  background:var(--card);
+  border:1px solid var(--hairline);
+  padding:22px 26px;
+  margin:18px 0;
+  position:relative;
+}
+.summary-card .sc-section{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+.summary-card .sc-content{
+  font-size:14px;
+  line-height:1.6;
+  white-space:pre-line;
+}
+.summary-card .sc-content em{color:var(--muted)}
+.summary-card .sc-edit{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:13px;
+  color:var(--accent);
+  text-decoration:underline;
+  cursor:pointer;
+  font-weight:500;
+  background:transparent;
+  border:none;
+  font-family:var(--sans);
+}
+.summary-card .sc-edit:hover{color:var(--ink)}
+
+/* ========== Misc ========== */
+
+.divider{
+  height:1px;
+  background:var(--hairline);
+  margin:48px 0;
+}
+.note{
+  font-size:14px;
+  color:var(--muted);
+  font-style:italic;
+  margin:14px 0;
+  line-height:1.55;
+}
+.tag-line{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  color:var(--muted);
+  margin:8px 0 18px;
+}
+.persona-note-block{
+  margin:18px 0 24px;
+  padding-left:20px;
+  border-left:2px solid var(--hairline);
+}
+.persona-note-block .pn-name{
+  font-family:var(--serif);
+  font-size:20px;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+
+/* Welcome / Thank you screens */
+.welcome-screen,.thanks-screen{
+  text-align:left;
+  padding:120px 0 80px;
+}
+.welcome-screen .lead-meta{
+  display:flex;
+  gap:18px;
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.thanks-screen{padding-top:160px;text-align:center}
+.thanks-screen h1{margin-bottom:24px}
+
+/* ========== Hidden helper ========== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+</style>
+</head>
+<body>
+
+<!-- ====== PROGRESS BAR ====== -->
+<div class="progress" id="progress" hidden>
+  <div class="progress-track">
+    <span id="progress-label">Section 1 of 14 · Brand character</span>
+    <div class="progress-bar"><div class="progress-bar-fill" id="progress-fill"></div></div>
+  </div>
+</div>
+
+<!-- ====== WELCOME ====== -->
+<section data-section="welcome">
+  <div class="wrap welcome-screen">
+    <div class="lead-meta">
+      <span>A brand discovery conversation</span>
+      <span>·</span>
+      <span>30-35 minutes</span>
+    </div>
+    <h1 class="title">BodyTalk × Pilates with Aarti</h1>
+    <p class="intro large">
+      This is a 30-35 minute conversation about who the brand is for, what it sounds like, and what it stands on. Most of the questions have no right answer — we're trying to find yours. A few of the questions are uncomfortable on purpose; those are the ones worth answering carefully.
+    </p>
+
+    <div class="callout">
+      <div class="eyebrow" style="margin-bottom:14px">What this stands on</div>
+      <ol>
+        <li><strong>The practice is the proof.</strong> Thirty years in fitness. Twenty-three in pilates. Balanced Body, Michael King, APPI, the Breathe Diploma, NOI's Explain Pain and Bodily Relearning, and a multi-year apprenticeship with Moushumi. Two thousand-plus people. Everything else grows from here.</li>
+        <li><strong>Pain is not purely physical.</strong> This is your stated belief and the foundation of the chronic-pain + mind-body chapter we're now in.</li>
+        <li><strong>The body that comes home with you is the practice.</strong> <em>"One hour affects 23."</em> The brand is built on what people take out of the room.</li>
+        <li><strong>The lineage gets named, out loud.</strong> Balanced Body, Michael King, APPI, Moushumi, Breathe, NOI. We say the names.</li>
+        <li><strong>What's on the door is the live question.</strong> BodyTalk-as-master, a new umbrella, or PilatesWithAarti — we'll find the answer in this conversation, not before.</li>
+      </ol>
+    </div>
+
+    <div class="field">
+      <label class="label" for="name-input">How do you want your name to read on the final brand materials?</label>
+      <input type="text" id="name-input" value="Aarti Jhunjhunwala" data-key="name">
+      <div class="hint">Aarti, Aarti Jhunjhunwala, Aarti J., or another version.</div>
+    </div>
+
+    <div style="margin-top:48px">
+      <button class="btn btn-large" data-go="1">Begin →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §1 BRAND CHARACTER ====== -->
+<section data-section="1" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 1 of 14 · Brand character</div>
+    <h2 class="headline">What the brand should — and must never — feel like.</h2>
+    <p class="intro">
+      Pick five from each list. The first list is what we want the brand to feel like at every touchpoint — the words clients would unprompted say if they were describing it. The second list is the anti-brand: words we'd never want to land on us. The "never" list often reveals more than the "must" list, so be honest there.
+    </p>
+
+    <div class="chip-pools">
+      <div>
+        <div class="label">Must-be — pick exactly 5</div>
+        <div class="chip-counter" id="must-be-counter"><strong>0</strong> / 5 selected</div>
+        <div class="chip-pool" id="must-be-pool" data-key="character.mustBe"></div>
+      </div>
+      <div>
+        <div class="label">Must-never-be — pick exactly 5</div>
+        <div class="chip-counter" id="must-not-counter"><strong>0</strong> / 5 selected</div>
+        <div class="chip-pool" id="must-not-pool" data-key="character.mustNeverBe"></div>
+      </div>
+    </div>
+
+    <div class="hint">Click a chip to select. Click again to deselect.</div>
+  </div>
+</section>
+
+<!-- ====== §2 PERSONALITY + VOICE ====== -->
+<section data-section="2" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 2 of 14 · Personality and tone</div>
+    <h2 class="headline">What does the brand actually sound like?</h2>
+    <p class="intro">
+      Two parts. First, five sliders for the brand's personality. Drag the dot to where the brand sits. There's no "right" middle — pick a direction. Second, four short paragraphs of brand copy in different voices. Rank them from closest-to-furthest from how you actually want to sound — even if all four feel partly right.
+    </p>
+
+    <div class="field-group" id="personality-sliders">
+      <h3 class="subhead">Five sliders</h3>
+    </div>
+
+    <div class="field-group">
+      <h3 class="subhead">Four voices — rank from closest to furthest</h3>
+      <p class="note">These are four different ways the brand could speak — using your real credentials, real tenure, real beliefs. None of them is wrong. We're trying to read which one you naturally inhabit.</p>
+      <div class="rank-list" id="voice-rank" data-key="personality.voiceRank"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §3 MOODBOARD ====== -->
+<section data-section="3" hidden>
+  <div class="wrap wide">
+    <div class="eyebrow">Section 3 of 14 · Moodboard</div>
+    <h2 class="headline">Five visual worlds.</h2>
+    <p class="intro" style="max-width:720px">
+      Each card below is a different visual direction the brand could plausibly inhabit. None of them is "right" — they're each a coherent territory. Look at all five, then rate each, and tell me what feels right and what feels wrong. The worlds you rate highest will direct Phase 2's visual identity.
+    </p>
+    <p class="intro" style="max-width:720px;margin-top:-12px">
+      The reference brands listed in each tearsheet are the ones to imagine when you read it. We've spanned the range — from clinically clinical to spiritually somatic, with three in the middle.
+    </p>
+
+    <div id="worlds-list"></div>
+
+    <div style="max-width:720px;margin:48px 0 0">
+      <h3 class="subhead">Optional — a sixth direction we missed?</h3>
+      <textarea data-key="moodboard.missingDirection" placeholder="If none of these five hit it exactly, describe a direction we missed." rows="3"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §4 VISUAL PREFERENCES ====== -->
+<section data-section="4" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 4 of 14 · Visual preferences</div>
+    <h2 class="headline">What does it look like — before we even pick a typeface?</h2>
+    <p class="intro">
+      No typeface picks here, no logo decisions, no "premium-vs-not" generalities. We're reading taste across four dimensions so the Phase 2 designer knows where to land. Slide, click, choose.
+    </p>
+
+    <h3 class="subhead">Typography</h3>
+    <p class="hint" style="margin-bottom:18px">Each pair has visual specimens at the ends. Drag the dot to where the brand sits.</p>
+
+    <div class="slider-block">
+      <div class="type-spec"><div class="left" style="font-family:var(--serif);font-weight:300">Practice</div><div class="right" style="font-family:'Inter';font-weight:500">Practice</div></div>
+      <div class="slider-ends"><span>Serif</span><span>Sans</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.typography.family">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <div class="slider-block">
+      <div class="type-spec geo"><div class="left" style="font-family:'Inter';font-weight:500;letter-spacing:.04em;font-size:30px">LINEAGE</div><div class="right" style="font-family:var(--serif);font-weight:400;font-size:30px">Lineage</div></div>
+      <div class="slider-ends"><span>Geometric</span><span>Humanist</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.typography.skeleton">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <div class="slider-block">
+      <div class="type-spec book"><div class="left">Pain is not purely physical — long-form reading.</div><div class="right">Pain Is Not Physical</div></div>
+      <div class="slider-ends"><span>Bookish</span><span>Display</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.typography.mood">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <div class="slider-block">
+      <div class="type-spec ornate"><div class="left" style="font-style:italic;font-weight:300;font-size:32px">Practice.</div><div class="right" style="font-weight:300;font-size:30px">Practice.</div></div>
+      <div class="slider-ends"><span>Ornate</span><span>Neutral</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.typography.decoration">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="subhead">Photography</h3>
+    <p class="hint" style="margin-bottom:18px">Click once to mark <strong>lead</strong> (1). Click two more for <strong>supporting</strong> (2 and 3). Click again to deselect.</p>
+
+    <div class="photo-grid" id="photo-grid">
+      <div class="photo-tile" data-photo="1"><img src="images/photo-categories/cat-1.jpg" alt="Studio interior, natural light" loading="lazy"><div class="label-bar">Studio interior · natural light · empty</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="2"><img src="images/photo-categories/cat-2.jpg" alt="Studio with body in motion" loading="lazy"><div class="label-bar">Studio · wide · single body in motion</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="3"><img src="images/photo-categories/cat-3.jpg" alt="Founder portrait" loading="lazy"><div class="label-bar">Portrait · founder · working</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="4"><img src="images/photo-categories/cat-4.jpg" alt="Student mid-practice" loading="lazy"><div class="label-bar">Portrait · student · mid-practice</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="5"><img src="images/photo-categories/cat-5.jpg" alt="Editorial still-life" loading="lazy"><div class="label-bar">Editorial still-life · equipment + props</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="6"><img src="images/photo-categories/cat-6.jpg" alt="Documentary candid" loading="lazy"><div class="label-bar">Documentary candid · between sessions</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="7"><img src="images/photo-categories/cat-7.jpg" alt="Anatomical / diagrammatic" loading="lazy"><div class="label-bar">Anatomical / diagrammatic · illustration</div><div class="badge">·</div></div>
+      <div class="photo-tile" data-photo="8"><img src="images/photo-categories/cat-8.jpg" alt="Indian-context" loading="lazy"><div class="label-bar">Indian-context · place · texture</div><div class="badge">·</div></div>
+    </div>
+
+    <p class="note" style="text-align:center">The lead direction defines the brand. Supporting directions add range. We'll commission Phase 2 photography against these picks.</p>
+
+    <div class="divider"></div>
+
+    <h3 class="subhead">Palette</h3>
+    <p class="hint" style="margin-bottom:18px">Click one card to select.</p>
+
+    <div class="palette-grid" id="palette-grid">
+      <div class="palette-card" data-palette="muted-clinical">
+        <div class="palette-swatches"><div style="background:#F4F1EA"></div><div style="background:#0F2A44"></div><div style="background:#E8DFCD"></div><div style="background:#A83232"></div></div>
+        <h4>Muted Clinical</h4>
+        <p>Quiet authority. Reads serious in a hospital corridor.</p>
+      </div>
+      <div class="palette-card" data-palette="warm-sand">
+        <div class="palette-swatches"><div style="background:#DED4C4"></div><div style="background:#221F1C"></div><div style="background:#8B9583"></div><div style="background:#92432D"></div></div>
+        <h4>Warm Sand</h4>
+        <p>Editorial premium. Reads like a quarterly magazine.</p>
+      </div>
+      <div class="palette-card" data-palette="sage-indian">
+        <div class="palette-swatches"><div style="background:#6B635A"></div><div style="background:#C26E4E"></div><div style="background:#D9883C"></div><div style="background:#E7E0D1"></div></div>
+        <h4>Sage Indian</h4>
+        <p>Indian-rooted. Reads like Ananda in a city studio.</p>
+      </div>
+      <div class="palette-card" data-palette="editorial-grey">
+        <div class="palette-swatches"><div style="background:#2E2E2E"></div><div style="background:#C4C6C9"></div><div style="background:#1a1a1a"></div><div style="background:#fafafa"></div></div>
+        <h4>Editorial Grey</h4>
+        <p>Architectural minimal. Reads like a Tribeca studio in Sopan Baug.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="subhead">Photographic mood &amp; light</h3>
+    <p class="hint" style="margin-bottom:18px">Four gradient sliders. Each shows the range visually.</p>
+
+    <div class="slider-block">
+      <div class="gradient-track light"></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.moodLight.lightSource">
+      <div class="slider-ends" style="margin-top:8px"><span>Natural</span><span>Studio</span></div>
+    </div>
+    <div class="slider-block">
+      <div class="gradient-track temp"></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.moodLight.temperature">
+      <div class="slider-ends" style="margin-top:8px"><span>Warm</span><span>Cool</span></div>
+    </div>
+    <div class="slider-block">
+      <div class="gradient-track expose"></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.moodLight.exposure">
+      <div class="slider-ends" style="margin-top:8px"><span>Bright</span><span>Shadowed</span></div>
+    </div>
+    <div class="slider-block">
+      <div class="gradient-track locale"></div>
+      <input type="range" min="0" max="100" value="50" data-key="visual.moodLight.locale">
+      <div class="slider-ends" style="margin-top:8px"><span>Indian sun</span><span>Overcast European</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §5 POSITIONING MAPS ====== -->
+<section data-section="5" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 5 of 14 · Positioning maps</div>
+    <h2 class="headline">Where does the brand sit — and where do you want it to sit?</h2>
+    <p class="intro">
+      Three maps. On each, place two dots: one for where the brand reads <strong>today</strong>, one for where you want it to read <strong>in 24 months</strong>. Distance between the dots tells us how much movement we're committing to. Don't overthink the placement; first instinct is usually right.
+    </p>
+
+    <div id="maps-list"></div>
+  </div>
+</section>
+
+<!-- ====== §6 COMPETITORS ====== -->
+<section data-section="6" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 6 of 14 · Competitors you watch</div>
+    <h2 class="headline">Who's in your daily peripheral vision?</h2>
+    <p class="intro">
+      Two questions. The first is about who's in your category — pilates, movement, chronic-pain. The second is about whose posture you'd quietly want the brand to resemble — even from outside fitness. Names are more useful than descriptions. List as many as feel right.
+    </p>
+
+    <div class="field">
+      <label class="label">Pilates / movement teachers / studios you watch — Indian and global. Include Moushumi if she still belongs on the list.</label>
+      <textarea data-key="competitors.movement" rows="6" placeholder="e.g. Moushumi · Yasmin Karachiwala · Forma Pilates · The Class by Taryn Toomey · APPI Clinics · …"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">Non-pilates brands whose posture you'd like Aarti's brand to read like. Wellness, design, hospitality, publishing — anywhere.</label>
+      <textarea data-key="competitors.adjacent" rows="6" placeholder="e.g. Aesop · Kinfolk · Ananda · Raw Mango · Aman Resorts · …"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §7 THE CUSTOMER ====== -->
+<section data-section="7" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 7 of 14 · The customer</div>
+    <h2 class="headline">Who is this practice for — and who isn't it?</h2>
+    <p class="intro">
+      Below are four real archetypes from your client book — drawn from the 2022 harvest and from your own descriptions. Drag to rank them by how central each is to who you serve today. Then a few questions to sharpen who the brand explicitly does — and doesn't — speak to.
+    </p>
+
+    <h3 class="subhead">Persona ranker</h3>
+    <p class="note">Top is most central to your practice today.</p>
+    <div class="rank-list" id="persona-rank" data-key="customer.personaRank"></div>
+
+    <h3 class="subhead">Per-persona note</h3>
+    <p class="note">In your own words, what does this person come to you for — and what keeps them?</p>
+    <div id="persona-notes"></div>
+
+    <h3 class="subhead">The dual-path question</h3>
+    <p class="note">The harvest showed both — Janhavi came for pain, Saneya through a school-friend connection, Ayesha through a 25-year friendship.</p>
+    <div class="slider-block">
+      <div class="slider-ends"><span>Pain-first</span><span>Social-first</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="customer.pathSlider">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+    <div class="field">
+      <label class="label">Should the brand hold both paths equally, or lean toward one? Why?</label>
+      <textarea data-key="customer.pathNotes" rows="3"></textarea>
+    </div>
+
+    <h3 class="subhead">Refusal</h3>
+    <p class="note">Refusal is part of premium. Saying no clearly attracts the right people.</p>
+    <div class="field">
+      <label class="label">Describe one or two people the brand is explicitly NOT for. Why.</label>
+      <textarea data-key="customer.refusal" rows="4"></textarea>
+    </div>
+
+    <h3 class="subhead">Peer description</h3>
+    <div class="field">
+      <label class="label">When your most loyal students describe you to a friend, what do they say? Use their actual words if you remember them — exact quotes are useful.</label>
+      <textarea data-key="customer.peerDescription" rows="4"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §8 THE NAME ====== -->
+<section data-section="8" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 8 of 14 · The name</div>
+    <h2 class="headline">What goes on the door?</h2>
+    <p class="intro">
+      The studio is running. The teaching is happening. We're trying to decide what the studio is <em>called</em> in the next chapter. Three years ago you said BodyTalk should be the master brand and PilatesWithAarti should sit inside it. The chronic-pain + mind-body chapter has deepened since. Maybe that vision still holds. Maybe it doesn't. The questions below let you say either. There's no wrong answer; we're trying to find yours.
+    </p>
+
+    <div class="slider-block">
+      <div class="slider-ends"><span>Ready to retire it</span><span>Keep as primary</span></div>
+      <label class="label">How attached are you to the name "PilatesWithAarti" today?</label>
+      <input type="range" min="0" max="100" value="50" data-key="nameChoice.attachmentPilatesWithAarti">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <div class="slider-block">
+      <div class="slider-ends"><span>Move past it</span><span>Full revival as master</span></div>
+      <label class="label">How attached are you to the name "BodyTalk" today?</label>
+      <input type="range" min="0" max="100" value="50" data-key="nameChoice.attachmentBodyTalk">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <h3 class="subhead">Best direction for the brand</h3>
+    <p class="note">Given the chronic-pain + mind-body chapter you're now in.</p>
+    <div class="radio-cards" id="name-direction" data-key="nameChoice.direction">
+      <label class="radio-card" data-value="confirm-2022">
+        <input type="radio" name="name-direction" value="confirm-2022">
+        <div class="rc-title">Confirm 2022 — BodyTalk = master, Pilates with Aarti = sub-brand inside it</div>
+        <div class="rc-desc">Body+Talk semantically fits the mind-body chapter. Family legacy preserved. The 1994 origin becomes the brand's first chapter.</div>
+      </label>
+      <label class="radio-card" data-value="new-umbrella">
+        <input type="radio" name="name-direction" value="new-umbrella">
+        <div class="rc-title">New umbrella — a fresh master brand name</div>
+        <div class="rc-desc">Loses 30 years of family legacy but holds the new chapter without compromise. We'd name it together.</div>
+      </label>
+      <label class="radio-card" data-value="keep-simple">
+        <input type="radio" name="name-direction" value="keep-simple">
+        <div class="rc-title">Keep simple — Pilates with Aarti as master</div>
+        <div class="rc-desc">Founder-led, simple. Caps the ceiling when the practice expands beyond pilates.</div>
+      </label>
+      <label class="radio-card" data-value="aarti-as-brand">
+        <input type="radio" name="name-direction" value="aarti-as-brand">
+        <div class="rc-title">Aarti as the brand — your own legal name as the master</div>
+        <div class="rc-desc">The person is the brand. Holds visibility tightly. Limits the method's portability past you.</div>
+      </label>
+    </div>
+
+    <div class="field">
+      <label class="label">What's the one thing the brand name has to do — for you, for your mother, for the practice?</label>
+      <textarea data-key="nameChoice.mustDo" rows="4"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">Working name(s) for The Method. Even a placeholder is useful.</label>
+      <div class="hint" style="margin-bottom:8px">Examples to nudge thinking: <em>The Sopan Method · The Pilates Return · The Quiet Practice · BodyTalk Method · BodyTalk Studio · The Aarti Method.</em></div>
+      <textarea data-key="nameChoice.methodPlaceholder" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">In 2022 you said BodyTalk would be the master brand. Three years on, with chronic-pain and mind-body now central, does that still feel right — or has something shifted?</label>
+      <textarea data-key="nameChoice.stillRight" rows="4"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">BodyTalk was your mother's. You've said you're emotionally free to reinvent it. Anything you want to honour about her original — even as the new chapter takes a different direction?</label>
+      <textarea data-key="nameChoice.honourMother" rows="4"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §9 CLINICAL × INDIAN × LINEAGE ====== -->
+<section data-section="9" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 9 of 14 · Clinical · Indian · Lineage</div>
+    <h2 class="headline">How clinical, how Indian, how loud about lineage.</h2>
+    <p class="intro">
+      Three of the brand's load-bearing decisions. Where the practice sits on the clinical-to-somatic spectrum, how visibly Indian-rooted it reads, and how much we lead with the lineage stack you've built. Plus a quick rank of how you actually think about pain — which informs everything else.
+    </p>
+
+    <h3 class="subhead">Pain belief</h3>
+    <p class="note">Drag to rank by how true each statement feels in your practice. <strong>Top = most true.</strong></p>
+    <div class="rank-list" id="pain-belief-rank" data-key="register.painBeliefRank"></div>
+
+    <h3 class="subhead">Clinical ↔ Somatic register</h3>
+    <p class="note">How clinical or somatic should the brand feel?</p>
+    <div class="radio-row" data-key="register.clinicalSomatic">
+      <label><input type="radio" name="cs" value="clinical"><div><div><strong>Purely clinical</strong></div><div class="desc">Physiotherapy register, evidence-led, anatomy-forward, no spiritual vocabulary.</div></div></label>
+      <label><input type="radio" name="cs" value="clinical-warm"><div><div><strong>Clinically grounded, warmly delivered</strong></div><div class="desc">Clinical credentials underneath, warm and personal on the surface.</div></div></label>
+      <label><input type="radio" name="cs" value="even"><div><div><strong>Even — clinical and somatic in equal measure</strong></div><div class="desc">Both halves of the practice visible.</div></div></label>
+      <label><input type="radio" name="cs" value="somatic-credible"><div><div><strong>Somatic with clinical credibility behind it</strong></div><div class="desc">Leads with breath, presence, embodiment; credentials in fine print.</div></div></label>
+      <label><input type="radio" name="cs" value="somatic-spiritual"><div><div><strong>Somatic-spiritual</strong></div><div class="desc">Leads with the spiritual / mind-body register; clinical training cited only when needed.</div></div></label>
+    </div>
+
+    <h3 class="subhead">Indian-ness</h3>
+    <p class="note">How visibly Indian-rooted should the brand be?</p>
+    <div class="radio-row" data-key="register.indianness">
+      <label><input type="radio" name="indi" value="not-at-all"><div><div><strong>Not at all</strong></div><div class="desc">International register, no Indian markers visible.</div></div></label>
+      <label><input type="radio" name="indi" value="subtle"><div><div><strong>Subtly present</strong></div><div class="desc">Pune named, occasional Sanskrit, Indian-rooted layout, no Devanagari.</div></div></label>
+      <label><input type="radio" name="indi" value="equal"><div><div><strong>Equal partner</strong></div><div class="desc">Indian and global registers side by side throughout.</div></div></label>
+      <label><input type="radio" name="indi" value="rooted"><div><div><strong>Clearly Indian-rooted</strong></div><div class="desc">Devanagari in titles where it fits, Pune as setting, Indian-aesthetic visible.</div></div></label>
+      <label><input type="radio" name="indi" value="spiritual"><div><div><strong>Unmistakably Indian-spiritual</strong></div><div class="desc">Heritage, lineage, language, place — front and centre.</div></div></label>
+    </div>
+
+    <h3 class="subhead">Lineage register</h3>
+    <p class="note">How loudly should the brand state your lineage stack — Balanced Body, Michael King, APPI, Moushumi Kuvawala, Breathe Education's Diploma of Clinical Pilates, NOI Group's Explain Pain and Bodily Relearning?</p>
+    <div class="radio-row" data-key="register.lineage">
+      <label><input type="radio" name="lin" value="not-mentioned"><div><div><strong>Not mentioned</strong></div><div class="desc">The practice speaks for itself.</div></div></label>
+      <label><input type="radio" name="lin" value="bio-only"><div><div><strong>Referenced once, in bio</strong></div><div class="desc">Small mention on About page only.</div></div></label>
+      <label><input type="radio" name="lin" value="lineage-page"><div><div><strong>Stated on a dedicated lineage page</strong></div><div class="desc">Dates, originators, photos, certificates.</div></div></label>
+      <label><input type="radio" name="lin" value="front-centre"><div><div><strong>Front and centre</strong></div><div class="desc">The master narrative leads with the lineage. Every credential named in the welcome line.</div></div></label>
+      <label><input type="radio" name="lin" value="archival"><div><div><strong>Front and centre + Devanagari + photos</strong></div><div class="desc">Full archival treatment, including photos of the 1994 BodyTalk gym.</div></div></label>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §10 PRICING & OFFER LADDER ====== -->
+<section data-section="10" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 10 of 14 · Pricing &amp; offer ladder</div>
+    <h2 class="headline">What we charge — and what we won't.</h2>
+    <p class="intro">
+      Five number inputs and a few posture questions. None of these are commitments — they're targets we'll pressure-test in Phase 2. Use whole rupees. The current 1:1 rate (₹1,500/session) is shown for anchor; the rest are blank.
+    </p>
+
+    <div class="field">
+      <label class="label">Updated 1:1 12-pack price — what feels right going forward?</label>
+      <div class="hint" style="margin-bottom:0">Current: ₹18,000 / 12 sessions (₹1,500/session). We're recommending ₹24,000-30,000 (₹2,000-2,500/session) given your credential additions.</div>
+      <div class="num-row"><span class="prefix">₹</span><input type="number" data-key="pricing.oneToOnePack" placeholder="24000"><span class="anchor">/ 12 sessions</span></div>
+    </div>
+
+    <div class="field">
+      <label class="label">Target price for The Twelve-Week Return (Signature Cohort) — per participant.</label>
+      <div class="hint" style="margin-bottom:0">4-6 participants per cohort. 12 weeks structured. Some 1:1 check-ins. Recommended range: ₹75,000-1,20,000.</div>
+      <div class="num-row"><span class="prefix">₹</span><input type="number" data-key="pricing.signatureCohort" placeholder="90000"><span class="anchor">/ participant</span></div>
+    </div>
+
+    <div class="field">
+      <label class="label">Target price for the Workplace Chronic Pain Capsule (corporate, 2-day flat fee).</label>
+      <div class="hint" style="margin-bottom:0">30-50 knowledge workers, assessment + workshop + follow-up. Recommended range: ₹4,00,000-8,00,000.</div>
+      <div class="num-row"><span class="prefix">₹</span><input type="number" data-key="pricing.corporateCapsule" placeholder="600000"><span class="anchor">/ engagement</span></div>
+    </div>
+
+    <div class="field">
+      <label class="label">Target price for the Executive Intensive (1-day, 8-12 C-suite participants).</label>
+      <div class="hint" style="margin-bottom:0">Recommended range: ₹2,00,000-5,00,000.</div>
+      <div class="num-row"><span class="prefix">₹</span><input type="number" data-key="pricing.execIntensive" placeholder="300000"><span class="anchor">/ engagement</span></div>
+    </div>
+
+    <div class="field">
+      <label class="label">Retreat — 3-5 days, 10-15 participants, all-inclusive per person.</label>
+      <div class="hint" style="margin-bottom:0">Maharashtra / Goa / Kerala mid-premium property. Recommended range: ₹1,50,000-3,00,000.</div>
+      <div class="num-row"><span class="prefix">₹</span><input type="number" data-key="pricing.retreat" placeholder="200000"><span class="anchor">/ person</span></div>
+    </div>
+
+    <div class="slider-block">
+      <label class="label">How comfortable are you raising your 1:1 rate by 30-50% in the next 12 months — knowing you may lose a few clients?</label>
+      <div class="slider-ends"><span>Very uncomfortable</span><span>Fully comfortable</span></div>
+      <input type="range" min="0" max="100" value="50" data-key="pricing.raiseComfort">
+      <div class="hint slider-readout"><span class="readout">50</span></div>
+    </div>
+
+    <h3 class="subhead">Posture</h3>
+
+    <div class="field">
+      <div class="label">Discount posture</div>
+      <div class="radio-row" data-key="pricing.discountPosture">
+        <label><input type="radio" name="dp" value="never"><div>Never discount</div></label>
+        <label><input type="radio" name="dp" value="community"><div>Only for community members (long-timers, alumni)</div></label>
+        <label><input type="radio" name="dp" value="launches"><div>Occasional launches</div></label>
+        <label><input type="radio" name="dp" value="regular"><div>Regular offers</div></label>
+        <label><input type="radio" name="dp" value="undecided"><div>No rules yet</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Free trial / taster</div>
+      <div class="radio-row" data-key="pricing.freeTrial">
+        <label><input type="radio" name="ft" value="all"><div>Yes for all</div></label>
+        <label><input type="radio" name="ft" value="cohort"><div>Only for the cohort (not 1:1)</div></label>
+        <label><input type="radio" name="ft" value="no"><div>No</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Refund policy</div>
+      <div class="radio-row" data-key="pricing.refundPolicy">
+        <label><input type="radio" name="rp" value="no"><div>No refunds</div></label>
+        <label><input type="radio" name="rp" value="limited"><div>Yes, under limited conditions</div></label>
+        <label><input type="radio" name="rp" value="full"><div>Yes, full policy</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Public pricing on the website</div>
+      <div class="radio-row" data-key="pricing.publicPricing">
+        <label><input type="radio" name="pp" value="all"><div>Yes — all prices on the page</div></label>
+        <label><input type="radio" name="pp" value="selective"><div>Selectively — show some, hide others</div></label>
+        <label><input type="radio" name="pp" value="none"><div>No — by conversation only</div></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §11 SPACE & SERVICE BEHAVIOUR ====== -->
+<section data-section="11" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 11 of 14 · Space &amp; service behaviour</div>
+    <h2 class="headline">What does the practice actually feel like — beyond the marketing?</h2>
+    <p class="intro">
+      The texture of the experience. The first 5 minutes, the room, the tone of the reply. The brand book in Phase 2 will describe the studio's experience in detail; these answers seed it.
+    </p>
+
+    <div class="field">
+      <label class="label">Describe the first 5 minutes of a new student's first session — the actual experience, not the marketing version.</label>
+      <textarea data-key="space.firstReveal" rows="5"></textarea>
+    </div>
+
+    <div class="field">
+      <div class="label">Scent in the studio</div>
+      <div class="radio-row" data-key="space.scent">
+        <label><input type="radio" name="sc-scent" value="neutral"><div>Neutral (no scent)</div></label>
+        <label><input type="radio" name="sc-scent" value="mild"><div>Mild ambient (a faint background)</div></label>
+        <label><input type="radio" name="sc-scent" value="strong"><div>Strong signature (a recognisable signature scent)</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Sound</div>
+      <div class="radio-row" data-key="space.sound">
+        <label><input type="radio" name="sc-sound" value="silent"><div>Silent practice</div></label>
+        <label><input type="radio" name="sc-sound" value="quiet"><div>Quiet ambient (low instrumental, almost imperceptible)</div></label>
+        <label><input type="radio" name="sc-sound" value="curated"><div>Curated playlist (specific tracks per session)</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Light</div>
+      <div class="radio-row" data-key="space.light">
+        <label><input type="radio" name="sc-light" value="natural"><div>Natural only (whatever the time of day brings)</div></label>
+        <label><input type="radio" name="sc-light" value="natural-soft"><div>Natural + softened (curtains, blinds)</div></label>
+        <label><input type="radio" name="sc-light" value="curated"><div>Curated artificial (controlled warm light, dimmable)</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Reply time — how fast do students hear back from the studio?</div>
+      <div class="radio-row" data-key="space.replyTime">
+        <label><input type="radio" name="sc-rep" value="4hr"><div>Within 4 hours (Aarti / Adi answers personally during work hours)</div></label>
+        <label><input type="radio" name="sc-rep" value="same-day"><div>Same day</div></label>
+        <label><input type="radio" name="sc-rep" value="next-day"><div>Next business day</div></label>
+        <label><input type="radio" name="sc-rep" value="weekly"><div>Weekly batched (admin-style)</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Phone calls</div>
+      <div class="radio-row" data-key="space.phoneAnswer">
+        <label><input type="radio" name="sc-ph" value="personal"><div>Always personal (Aarti picks up)</div></label>
+        <label><input type="radio" name="sc-ph" value="calendar"><div>Calendar-booked (clients book a slot)</div></label>
+        <label><input type="radio" name="sc-ph" value="email"><div>Email-only (no phone)</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Cancellation / refund posture</div>
+      <div class="radio-row" data-key="space.cancellation">
+        <label><input type="radio" name="sc-can" value="strict"><div>One strict policy applied to all</div></label>
+        <label><input type="radio" name="sc-can" value="flexible"><div>Flexible case-by-case (Aarti's discretion)</div></label>
+        <label><input type="radio" name="sc-can" value="none"><div>No formal policy — handled in the moment</div></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">What's the one ritual you want every student to experience, even if nothing else was perfect?</label>
+      <textarea data-key="space.signatureRitual" rows="4"></textarea>
+    </div>
+
+    <div class="field">
+      <p class="note">Janhavi said — <em>"Aarti shows the skeleton, very important."</em> Saneya said — <em>"Aarti tells me to imagine a cup of coffee on my back."</em> Ayesha said — <em>"she's geeky about which muscles are hit."</em> These are signature moves that show up in your teaching.</p>
+      <label class="label">Is there one more — something you do in every class that students might not even consciously notice — that should be part of the brand?</label>
+      <textarea data-key="space.signatureMove" rows="4"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §12 INFLUENCES ====== -->
+<section data-section="12" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 12 of 14 · Influences</div>
+    <h2 class="headline">Whose work do you admire — and whose success would you not want to be compared to?</h2>
+    <p class="intro">
+      Six lists, each short. Just names. The last question is anti-aspiration; that's the sharper one — be honest.
+    </p>
+
+    <div class="field">
+      <label class="label">Movement brands you admire (pilates, yoga, somatic, mobility)</label>
+      <textarea data-key="influences.movement" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Wellness brands you admire (clinical, retreat, integrative)</label>
+      <textarea data-key="influences.wellness" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Adjacent-luxury brands you admire — anything outside fitness whose register you want to inhabit</label>
+      <textarea data-key="influences.adjacentLuxury" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Teachers you admire — anywhere in the world. Movement, body, or otherwise.</label>
+      <textarea data-key="influences.teachers" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Writers / thinkers you admire — books, podcasts, essays</label>
+      <textarea data-key="influences.writersThinkers" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Founders you admire — any category</label>
+      <textarea data-key="influences.founders" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+      <p class="note">Don't be polite. Anti-aspiration sharpens the picture.</p>
+      <label class="label">A brand whose commercial success you'd be disappointed to be compared to.</label>
+      <textarea data-key="influences.antiAspiration" rows="3"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §13 FOUNDER STORY + VISIBILITY ====== -->
+<section data-section="13" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 13 of 14 · Founder story + visibility</div>
+    <h2 class="headline">Your story — and how publicly you'll tell it.</h2>
+    <p class="intro">
+      First, five small openings into your arc. Then two translations of the same story for two different listeners. Then one honest omission. Finally, the visibility-commitment matrix — the most important question in this form.
+    </p>
+
+    <h3 class="subhead">Five story openings</h3>
+
+    <div class="field">
+      <label class="label">The 1994 BodyTalk year</label>
+      <div class="hint" style="margin-bottom:8px">What's one memory from your mother's gym, in the first year of teaching, that you still carry?</div>
+      <textarea data-key="founderStory.year1994" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">The pivot to pilates</label>
+      <div class="hint" style="margin-bottom:8px">What did Moushumi see in you, or what did you see in her work, that became the apprenticeship?</div>
+      <textarea data-key="founderStory.pilatesPivot" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">The Breathe + NOI year (2024-25)</label>
+      <div class="hint" style="margin-bottom:8px">What did the Breathe Diploma — and Explain Pain and Bodily Relearning — teach you that you didn't already know, even after twenty-three years of pilates?</div>
+      <textarea data-key="founderStory.breatheNOI" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">The student who taught you something you now teach</label>
+      <div class="hint" style="margin-bottom:8px">Anonymise if you like — names won't be used.</div>
+      <textarea data-key="founderStory.studentTaughtMe" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">The thing you want the next generation of teachers to inherit from you</label>
+      <textarea data-key="founderStory.nextGenInheritance" rows="5"></textarea>
+    </div>
+
+    <h3 class="subhead">Translation prompts</h3>
+
+    <div class="field">
+      <label class="label">Tell your story to a 62-year-old business owner with a bad back, in under 100 words.</label>
+      <textarea data-key="founderStory.translationOlder" rows="5" data-wordcount="100"></textarea>
+      <div class="word-counter"><span class="wc-current">0</span> / 100 words</div>
+    </div>
+    <div class="field">
+      <label class="label">Tell your story to a 32-year-old lawyer new to pilates, in under 100 words.</label>
+      <textarea data-key="founderStory.translationYounger" rows="5" data-wordcount="100"></textarea>
+      <div class="word-counter"><span class="wc-current">0</span> / 100 words</div>
+    </div>
+
+    <h3 class="subhead">Omission</h3>
+
+    <div class="field">
+      <label class="label">What's one thing about you people often assume but isn't true?</label>
+      <textarea data-key="founderStory.omission" rows="3"></textarea>
+    </div>
+
+    <h3 class="subhead">Visibility commitment</h3>
+
+    <div class="callout">
+      <p>In 2022 your friend Ayesha told us — <em>"Aarti needs to first be visible. I'm waiting for her picture also."</em></p>
+      <p>You said in the same year — <em>"BodyTalk should be independent of me. I don't want it to be about Aarti."</em></p>
+      <p>These are in tension. The next 24 months can't hold both. Tick the boxes you'll commit to.</p>
+    </div>
+
+    <div class="check-list" id="commit-list">
+      <label><input type="checkbox" data-commit="linkedinWeekly"><div>Weekly LinkedIn long-form post in my voice</div></label>
+      <label><input type="checkbox" data-commit="reelsRegular"><div>Instagram reels with my voice / face — 2-4 per week</div></label>
+      <label><input type="checkbox" data-commit="podcasts"><div>4-8 podcast guest appearances per year</div></label>
+      <label><input type="checkbox" data-commit="book"><div>Book — outline Year 1, draft Year 2, publish Year 2/3</div></label>
+      <label><input type="checkbox" data-commit="retreat"><div>Annual retreat that I personally lead</div></label>
+      <label><input type="checkbox" data-commit="emailLetter"><div>Monthly email letter from me to the community</div></label>
+      <label><input type="checkbox" data-commit="press"><div>Being quoted / interviewed by name in press</div></label>
+      <label><input type="checkbox" data-commit="speaking"><div>Speaking at 2-3 industry events per year</div></label>
+    </div>
+
+    <div class="field" style="margin-top:24px">
+      <label class="radio-card" id="optout-card">
+        <input type="checkbox" data-commit="optOut">
+        <div class="rc-title">The opt-out</div>
+        <div class="rc-desc">I'd rather BodyTalk grow without me being its public face. We design accordingly — slower, institution-led, with Adi forward.</div>
+      </label>
+      <p class="note">Tick the boxes you'll do, and/or pick the opt-out. If you pick the opt-out alone, the entire growth plan rearranges — that's fine, but we should know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== §14 ROAD AHEAD ====== -->
+<section data-section="14" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Section 14 of 14 · Road ahead</div>
+    <h2 class="headline">Twelve months. Five years. A hundred graduates.</h2>
+    <p class="intro">
+      Last six. The year ahead, the year after that, and the way you'll know it's working.
+    </p>
+
+    <div class="field">
+      <label class="label">In 2022 you said BodyTalk would be the master brand. Three years on, with the chronic-pain + mind-body chapter now central, does that vision still hold? What's changed?</label>
+      <textarea data-key="roadAhead.bodyTalkVision2026" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">A competitor emerges and does something that worries you — what is it?</label>
+      <textarea data-key="roadAhead.competitorWorries" rows="4"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">A competitor is doing something you admire — what is it?</label>
+      <textarea data-key="roadAhead.competitorAdmires" rows="4"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">What will be different about the brand 12 months from now versus today?</label>
+      <textarea data-key="roadAhead.twelveMonthDelta" rows="4"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Your 5-year vision, in one sentence.</label>
+      <div class="hint" style="margin-bottom:8px">Discipline of brevity.</div>
+      <textarea data-key="roadAhead.fiveYearVision" rows="2"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">What would the first 100 graduates of The Twelve-Week Return say that would make you feel the brand is working?</label>
+      <textarea data-key="roadAhead.hundredGradsKPI" rows="5"></textarea>
+    </div>
+    <div class="field">
+      <label class="label">Anything else we should know.</label>
+      <textarea data-key="roadAhead.freeSpace" rows="4"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REVIEW & SUBMIT ====== -->
+<section data-section="review" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Review · before submit</div>
+    <h2 class="headline">A roll-up of what you've said.</h2>
+    <p class="intro">
+      One last look. Edit anywhere. When you submit, the responses go to Adi as a structured email; we discuss them next.
+    </p>
+
+    <div id="summary-list"></div>
+
+    <div style="text-align:left;margin:48px 0 0">
+      <button class="btn btn-large" id="submit-btn">Submit conversation →</button>
+      <p class="note" style="margin-top:18px">This sends a structured email to Adi. Phase 1 closes when this lands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== THANK YOU ====== -->
+<section data-section="thanks" hidden>
+  <div class="wrap thanks-screen">
+    <div class="eyebrow">Sent.</div>
+    <h1 class="title">Thank you, <span id="ty-name">Aarti</span>.</h1>
+    <p class="intro large">
+      This conversation closes Phase 1. Adi has the full record. We meet next about what we do with it.
+    </p>
+    <p class="tag-line">— And whatever you said about the brand-name question, the door is ready for whatever you decide.</p>
+  </div>
+</section>
+
+<!-- ====== STICKY FOOTER ====== -->
+<footer class="form-footer" id="form-footer" hidden>
+  <div class="footer-row">
+    <div class="left">
+      <button class="btn-ghost" id="back-btn">← Back</button>
+    </div>
+    <div class="right">
+      <span class="save-link" id="save-link">Save and continue later</span>
+      <button class="btn" id="next-btn">Next →</button>
+    </div>
+  </div>
+  <div class="error-banner" id="error-banner"></div>
+</footer>
+
+<!-- ====== SCRIPTS ====== -->
+<script>
+/* =========================================================
+   Configuration
+   ========================================================= */
+
+const CONFIG = {
+  webhookUrl: 'https://n8n-5oud.srv1391034.hstgr.cloud/webhook/aarti-brand-discovery',
+  storageKey: 'aarti-brand-discovery-v1',
+};
+
+const SECTION_ORDER = ['welcome','1','2','3','4','5','6','7','8','9','10','11','12','13','14','review','thanks'];
+const TOTAL_SECTIONS = 14;
+const SECTION_TITLES = {
+  '1':'Brand character',
+  '2':'Personality and tone',
+  '3':'Moodboard',
+  '4':'Visual preferences',
+  '5':'Positioning maps',
+  '6':'Competitors',
+  '7':'The customer',
+  '8':'The name',
+  '9':'Clinical · Indian · Lineage',
+  '10':'Pricing & offer ladder',
+  '11':'Space & service',
+  '12':'Influences',
+  '13':'Founder story + visibility',
+  '14':'Road ahead',
+};
+
+/* =========================================================
+   State
+   ========================================================= */
+
+const state = {
+  currentSection: 'welcome',
+  responses: {
+    session: { uuid: '', startedAt: '' },
+    name: 'Aarti Jhunjhunwala',
+    character: { mustBe: [], mustNeverBe: [] },
+    personality: { sliders:{tone:50,register:50,era:50,voiceAuthorship:50,energy:50}, voiceRank: ['A','B','C','D'] },
+    moodboard: {
+      W1:{rating:0,feelsRight:'',feelsWrong:''},
+      W2:{rating:0,feelsRight:'',feelsWrong:''},
+      W3:{rating:0,feelsRight:'',feelsWrong:''},
+      W4:{rating:0,feelsRight:'',feelsWrong:''},
+      W5:{rating:0,feelsRight:'',feelsWrong:''},
+      missingDirection:''
+    },
+    visual: {
+      typography: {family:50,skeleton:50,mood:50,decoration:50},
+      photography: {lead:null, supporting:[]},
+      palette: '',
+      moodLight: {lightSource:50,temperature:50,exposure:50,locale:50}
+    },
+    positioning: {
+      map1:{today:null,target:null},
+      map2:{today:null,target:null},
+      map3:{today:null,target:null}
+    },
+    competitors: {movement:'', adjacent:''},
+    customer: {
+      personaRank:['WellReadMother','FitnessMaximalist','EntrepreneurAbroad','ExecutiveProfessional'],
+      personaNotes:{WellReadMother:'',FitnessMaximalist:'',EntrepreneurAbroad:'',ExecutiveProfessional:''},
+      pathSlider:50,
+      pathNotes:'',
+      refusal:'',
+      peerDescription:''
+    },
+    nameChoice: {
+      attachmentPilatesWithAarti:50,
+      attachmentBodyTalk:50,
+      direction:'',
+      mustDo:'',
+      methodPlaceholder:'',
+      stillRight:'',
+      honourMother:''
+    },
+    register: {
+      painBeliefRank:['structural','neural','emotional','spiritual','multi'],
+      clinicalSomatic:'',
+      indianness:'',
+      lineage:''
+    },
+    pricing: {
+      oneToOnePack:null,
+      signatureCohort:null,
+      corporateCapsule:null,
+      execIntensive:null,
+      retreat:null,
+      raiseComfort:50,
+      discountPosture:'',
+      freeTrial:'',
+      refundPolicy:'',
+      publicPricing:''
+    },
+    space: {
+      firstReveal:'', scent:'', sound:'', light:'',
+      replyTime:'', phoneAnswer:'', cancellation:'',
+      signatureRitual:'', signatureMove:''
+    },
+    influences: {
+      movement:'',wellness:'',adjacentLuxury:'',
+      teachers:'',writersThinkers:'',founders:'',antiAspiration:''
+    },
+    founderStory: {
+      year1994:'',pilatesPivot:'',breatheNOI:'',studentTaughtMe:'',nextGenInheritance:'',
+      translationOlder:'',translationYounger:'',omission:'',
+      commitments:{linkedinWeekly:false,reelsRegular:false,podcasts:false,book:false,retreat:false,emailLetter:false,press:false,speaking:false,optOut:false}
+    },
+    roadAhead: {
+      bodyTalkVision2026:'',competitorWorries:'',competitorAdmires:'',
+      twelveMonthDelta:'',fiveYearVision:'',hundredGradsKPI:'',freeSpace:''
+    }
+  }
+};
+
+/* =========================================================
+   Persistence
+   ========================================================= */
+
+function loadState(){
+  try {
+    const raw = localStorage.getItem(CONFIG.storageKey);
+    if (raw){
+      const saved = JSON.parse(raw);
+      if (saved && saved.responses){
+        // Deep-merge known keys; ignore unknown
+        state.responses = mergeDeep(state.responses, saved.responses);
+        if (saved.currentSection) state.currentSection = saved.currentSection;
+      }
+    }
+  } catch(e) { console.warn('Failed to restore state', e); }
+}
+function saveState(){
+  try {
+    localStorage.setItem(CONFIG.storageKey, JSON.stringify({currentSection:state.currentSection, responses:state.responses}));
+  } catch(e) { console.warn('Failed to save state', e); }
+}
+const debouncedSave = debounce(saveState, 250);
+
+function mergeDeep(target, source){
+  if (!isObj(source)) return target;
+  for (const k in source){
+    if (isObj(source[k]) && isObj(target[k])) target[k] = mergeDeep(target[k], source[k]);
+    else target[k] = source[k];
+  }
+  return target;
+}
+function isObj(v){ return v !== null && typeof v === 'object' && !Array.isArray(v); }
+function debounce(fn, ms){
+  let t; return function(){ clearTimeout(t); t = setTimeout(()=>fn.apply(this, arguments), ms); };
+}
+
+/* =========================================================
+   Get / set values via dotted key path
+   ========================================================= */
+
+function getVal(path){
+  const parts = path.split('.');
+  let cur = state.responses;
+  for (const p of parts){ if (cur == null) return undefined; cur = cur[p]; }
+  return cur;
+}
+function setVal(path, value){
+  const parts = path.split('.');
+  let cur = state.responses;
+  for (let i=0; i<parts.length-1; i++){
+    if (cur[parts[i]] == null || typeof cur[parts[i]] !== 'object') cur[parts[i]] = {};
+    cur = cur[parts[i]];
+  }
+  cur[parts[parts.length-1]] = value;
+  debouncedSave();
+}
+
+/* =========================================================
+   Section navigation
+   ========================================================= */
+
+function showSection(id){
+  document.querySelectorAll('section[data-section]').forEach(s => s.hidden = true);
+  const target = document.querySelector(`section[data-section="${id}"]`);
+  if (!target) return;
+  target.hidden = false;
+  state.currentSection = id;
+  debouncedSave();
+
+  // Update progress + footer visibility
+  const isWelcome = id === 'welcome';
+  const isThanks = id === 'thanks';
+  const isReview = id === 'review';
+  document.getElementById('progress').hidden = isWelcome || isThanks;
+  document.getElementById('form-footer').hidden = isWelcome || isThanks;
+
+  if (!isWelcome && !isThanks){
+    let pct = 0;
+    let label = 'Section ' + id + ' of ' + TOTAL_SECTIONS;
+    if (isReview){
+      pct = 100; label = 'Review · before submit';
+    } else {
+      pct = (parseInt(id) / TOTAL_SECTIONS) * 100;
+      label = `Section ${id} of ${TOTAL_SECTIONS} · ${SECTION_TITLES[id]}`;
+    }
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = label;
+  }
+
+  // Adjust back/next visibility
+  const backBtn = document.getElementById('back-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const idx = SECTION_ORDER.indexOf(id);
+  backBtn.style.visibility = idx > 1 ? 'visible' : 'hidden';
+  if (isReview){ nextBtn.textContent = 'Submit ↑'; nextBtn.style.display = 'none'; }
+  else { nextBtn.textContent = 'Next →'; nextBtn.style.display = 'inline-flex'; }
+
+  // Section-specific hooks
+  if (id === 'review') buildSummary();
+
+  window.scrollTo({top:0, behavior:'smooth'});
+  hideError();
+}
+
+function nextSection(){
+  if (!validateCurrent()) return;
+  const idx = SECTION_ORDER.indexOf(state.currentSection);
+  const next = SECTION_ORDER[idx+1];
+  if (next) showSection(next);
+}
+function prevSection(){
+  const idx = SECTION_ORDER.indexOf(state.currentSection);
+  const prev = SECTION_ORDER[idx-1];
+  if (prev) showSection(prev);
+}
+
+/* =========================================================
+   Validation per section
+   ========================================================= */
+
+function validateCurrent(){
+  const id = state.currentSection;
+  hideError();
+  if (id === '1'){
+    if (state.responses.character.mustBe.length !== 5) return showError('Pick exactly 5 must-be words.');
+    if (state.responses.character.mustNeverBe.length !== 5) return showError('Pick exactly 5 must-never-be words.');
+  }
+  if (id === '3'){
+    const ratings = ['W1','W2','W3','W4','W5'].map(w => state.responses.moodboard[w].rating);
+    if (ratings.some(r => r === 0)) return showError('Please rate all five worlds before continuing.');
+  }
+  if (id === '5'){
+    const m = state.responses.positioning;
+    if (!m.map1.today || !m.map1.target || !m.map2.today || !m.map2.target || !m.map3.today || !m.map3.target){
+      return showError('Please place both dots (today + 24-month target) on all three maps.');
+    }
+  }
+  if (id === '8'){
+    if (!state.responses.nameChoice.direction) return showError('Please pick a direction.');
+  }
+  if (id === '9'){
+    const r = state.responses.register;
+    if (!r.clinicalSomatic) return showError('Please pick a clinical-somatic register.');
+    if (!r.indianness) return showError('Please pick an Indian-ness register.');
+    if (!r.lineage) return showError('Please pick a lineage register.');
+  }
+  if (id === '10'){
+    const p = state.responses.pricing;
+    const required = ['oneToOnePack','signatureCohort','corporateCapsule','execIntensive','retreat'];
+    if (required.some(k => !p[k] || p[k] <= 0)) return showError('Please fill all five pricing targets.');
+    if (!p.discountPosture) return showError('Please pick a discount posture.');
+    if (!p.freeTrial) return showError('Please pick a free-trial posture.');
+    if (!p.refundPolicy) return showError('Please pick a refund policy.');
+    if (!p.publicPricing) return showError('Please pick a public-pricing posture.');
+  }
+  if (id === '11'){
+    const s = state.responses.space;
+    const required = ['scent','sound','light','replyTime','phoneAnswer','cancellation'];
+    if (required.some(k => !s[k])) return showError('Please pick a value for each posture question.');
+  }
+  if (id === '13'){
+    const c = state.responses.founderStory.commitments;
+    const anyChecked = Object.entries(c).some(([k,v]) => v && k !== 'optOut');
+    if (!anyChecked && !c.optOut) return showError('Please tick at least one commitment, or pick the opt-out.');
+    if (anyChecked && c.optOut) return showError('You\'ve picked the opt-out and committed to actions. They\'re mutually exclusive — pick one.');
+  }
+  return true;
+}
+
+function showError(msg){
+  const b = document.getElementById('error-banner');
+  b.textContent = msg;
+  b.classList.add('show');
+  return false;
+}
+function hideError(){
+  const b = document.getElementById('error-banner');
+  b.classList.remove('show');
+  b.textContent = '';
+}
+
+/* =========================================================
+   §1 Brand character — chip pools
+   ========================================================= */
+
+const MUST_BE_POOL = ['lineage','clinical','embodied','curated','listening','slow','honest','intelligent','holistic','rooted','steady','unhurried','careful','specific','earned','serious','pune-honest','attentive','generous','educative','personal','understanding','Indian','sustained','quiet'];
+const MUST_NOT_POOL = ['loud','gimmicky','trendy','hustle','performative','transactional','franchise-y','celebrity-chasing','aesthetic-only','pastel-wellness'];
+
+function renderChips(poolEl, options, key, counterEl, klass){
+  poolEl.innerHTML = '';
+  const selected = getVal(key);
+  options.forEach(word => {
+    const chip = document.createElement('span');
+    chip.className = 'chip ' + (klass || '');
+    chip.textContent = word;
+    if (selected.includes(word)) chip.classList.add('selected');
+    chip.addEventListener('click', () => {
+      const cur = getVal(key);
+      const i = cur.indexOf(word);
+      if (i >= 0){
+        cur.splice(i, 1);
+        chip.classList.remove('selected');
+      } else {
+        if (cur.length >= 5) return;
+        cur.push(word);
+        chip.classList.add('selected');
+      }
+      setVal(key, cur);
+      updateCounter(counterEl, cur.length);
+    });
+    poolEl.appendChild(chip);
+  });
+  updateCounter(counterEl, selected.length);
+}
+function updateCounter(el, n){
+  if (!el) return;
+  el.innerHTML = `<strong>${n}</strong> / 5 selected`;
+}
+
+/* =========================================================
+   §2 Personality — sliders + voice rank
+   ========================================================= */
+
+const PERSONALITY_SLIDERS = [
+  {key:'personality.sliders.tone', label:'Tone', left:'Clinical', right:'Somatic', hint:'clinical = anatomy, evidence, physiology language. somatic = breath, presence, embodiment language.'},
+  {key:'personality.sliders.register', label:'Register', left:'Austere', right:'Lyrical', hint:'austere = sparse, factual, restrained. lyrical = image-rich, expressive, warm.'},
+  {key:'personality.sliders.era', label:'Era', left:'Classical', right:'Modern', hint:'classical = lineage-reverent, traditional repertoire respected. modern = contemporary, integrative, willing to mix.'},
+  {key:'personality.sliders.voiceAuthorship', label:'Voice authorship', left:'Founder-I', right:'Brand-we', hint:'founder-I = "I started teaching in 1994…". brand-we = "We hold a small practice in Sopan Baug…".'},
+  {key:'personality.sliders.energy', label:'Energy', left:'Restrained', right:'Expressive', hint:'restrained = quiet, withholding, reads in pauses. expressive = warm, animated, reads in gestures.'},
+];
+
+const VOICE_CARDS = [
+  {id:'A', eyebrow:'Voice A — Warm Teacher', body:'"Thirty years ago I started teaching in my mother\'s gym. I\'ve watched a lot of bodies. The ones I\'ve sat with the longest taught me that pain is rarely just where it hurts. Pilates is the way I work. The work is bigger than that."'},
+  {id:'B', eyebrow:'Voice B — Clinical Practitioner', body:'"Aarti Jhunjhunwala — Balanced Body (USA), Michael King (UK), APPI rehab. Diploma of Clinical Pilates (Breathe Education, Australia, 2024-25). Pain-neuroscience training from NOI Group — Explain Pain and Bodily Relearning. Twenty-three years specifically in pilates. The practice focuses on chronic musculoskeletal pain in adults."'},
+  {id:'C', eyebrow:'Voice C — Lineage-rooted', body:'"My mother opened one of Pune\'s first gyms in 1994. I learned to teach there. I learned pilates from Moushumi Kuvawala — India\'s master trainer for APPI and Balanced Body — over years of apprenticeship. The practice carries that line."'},
+  {id:'D', eyebrow:'Voice D — Embodied + spiritual', body:'"Pain is not purely physical. The body that holds you also holds your nervous system, your breath, your stress. Pilates is the doorway. The work continues into the breath, the imagery, and the way attention rests in the body."'},
+];
+
+function renderPersonalitySliders(){
+  const wrap = document.getElementById('personality-sliders');
+  // Keep h3 already in markup; append after
+  PERSONALITY_SLIDERS.forEach(s => {
+    const v = getVal(s.key);
+    const div = document.createElement('div');
+    div.className = 'slider-block';
+    div.innerHTML = `
+      <label class="label">${s.label}</label>
+      <div class="hint" style="margin-bottom:8px">${s.hint}</div>
+      <div class="slider-ends"><span>${s.left}</span><span>${s.right}</span></div>
+      <input type="range" min="0" max="100" value="${v}" data-key="${s.key}">
+      <div class="hint slider-readout"><span class="readout">${v}</span></div>
+    `;
+    wrap.appendChild(div);
+  });
+}
+
+function renderVoiceRank(){
+  const wrap = document.getElementById('voice-rank');
+  const order = getVal('personality.voiceRank');
+  drawRankList(wrap, order, VOICE_CARDS, 'personality.voiceRank');
+}
+
+/* Generic drag-rank renderer with optional onChange callback */
+function drawRankList(wrap, order, items, key, onChange){
+  wrap.innerHTML = '';
+  order.forEach((id, idx) => {
+    const item = items.find(i => i.id === id);
+    if (!item) return;
+    const li = document.createElement('div');
+    li.className = 'rank-item';
+    li.innerHTML = `
+      <div class="rank-position">${idx+1}</div>
+      <div class="rank-content">
+        <div class="rank-eyebrow">${item.eyebrow || ''}</div>
+        <div class="rank-title">${item.title || ''}</div>
+        <div class="rank-body">${item.body}</div>
+      </div>
+      <div class="rank-controls">
+        <button class="rank-btn up" ${idx===0?'disabled':''} aria-label="Move up">↑</button>
+        <button class="rank-btn down" ${idx===order.length-1?'disabled':''} aria-label="Move down">↓</button>
+      </div>
+    `;
+    li.querySelector('.up').addEventListener('click', () => {
+      if (idx === 0) return;
+      [order[idx-1], order[idx]] = [order[idx], order[idx-1]];
+      setVal(key, order);
+      drawRankList(wrap, order, items, key, onChange);
+      if (onChange) onChange();
+    });
+    li.querySelector('.down').addEventListener('click', () => {
+      if (idx === order.length-1) return;
+      [order[idx], order[idx+1]] = [order[idx+1], order[idx]];
+      setVal(key, order);
+      drawRankList(wrap, order, items, key, onChange);
+      if (onChange) onChange();
+    });
+    wrap.appendChild(li);
+  });
+}
+
+/* =========================================================
+   §3 Moodboard — five worlds
+   ========================================================= */
+
+const WORLDS = [
+  {id:'W1', n:'1', title:'Clinical Lineage', tearsheet:'images/moodboard/W1/w1-tearsheet.jpg'},
+  {id:'W2', n:'2', title:'Somatic Atelier', tearsheet:'images/moodboard/W2/w2-tearsheet.jpg'},
+  {id:'W3', n:'3', title:'Sacred Pune', tearsheet:'images/moodboard/W3/w3-tearsheet.jpg'},
+  {id:'W4', n:'4', title:'Longevity Performance', tearsheet:'images/moodboard/W4/w4-tearsheet.jpg'},
+  {id:'W5', n:'5', title:'Editorial Wellness', tearsheet:'images/moodboard/W5/w5-tearsheet.jpg'},
+];
+
+function renderWorlds(){
+  const wrap = document.getElementById('worlds-list');
+  wrap.innerHTML = '';
+  WORLDS.forEach(w => {
+    const data = state.responses.moodboard[w.id];
+    const card = document.createElement('div');
+    card.className = 'world-card';
+    card.innerHTML = `
+      <div class="tearsheet-wrap">
+        <img class="tearsheet" src="${w.tearsheet}" alt="${w.title} moodboard tearsheet" loading="lazy">
+      </div>
+      <div class="world-actions">
+        <div class="world-id">World · ${w.n}</div>
+        <h3 class="world-title">${w.title}</h3>
+        <div class="star-row">
+          <span class="star-prompt">How right does this world feel for the brand?</span>
+          ${[1,2,3,4,5].map(s => `<span class="star ${data.rating>=s?'lit':''}" data-star="${s}">★</span>`).join('')}
+        </div>
+        <div class="feedback-grid">
+          <div>
+            <label class="label">What feels right?</label>
+            <textarea data-key="moodboard.${w.id}.feelsRight" rows="3">${data.feelsRight||''}</textarea>
+          </div>
+          <div>
+            <label class="label">What feels wrong?</label>
+            <textarea data-key="moodboard.${w.id}.feelsWrong" rows="3">${data.feelsWrong||''}</textarea>
+          </div>
+        </div>
+      </div>
+    `;
+    // Star wiring
+    card.querySelectorAll('.star').forEach(starEl => {
+      starEl.addEventListener('click', () => {
+        const v = parseInt(starEl.getAttribute('data-star'));
+        state.responses.moodboard[w.id].rating = v;
+        debouncedSave();
+        // Repaint stars
+        card.querySelectorAll('.star').forEach(s => {
+          const sv = parseInt(s.getAttribute('data-star'));
+          s.classList.toggle('lit', sv <= v);
+        });
+      });
+    });
+    wrap.appendChild(card);
+  });
+  bindTextareas(wrap);
+}
+
+/* =========================================================
+   §4 Visuals — photography + palette
+   ========================================================= */
+
+function bindPhotoGrid(){
+  const tiles = document.querySelectorAll('#photo-grid .photo-tile');
+  tiles.forEach(t => {
+    t.addEventListener('click', () => {
+      const id = parseInt(t.getAttribute('data-photo'));
+      const p = state.responses.visual.photography;
+      const isLead = p.lead === id;
+      const supportIdx = p.supporting.indexOf(id);
+      // Cycle: unselected → lead → supporting → unselected
+      if (!isLead && supportIdx < 0){
+        if (p.lead == null) p.lead = id;
+        else if (p.supporting.length < 2) p.supporting.push(id);
+        else { p.lead = id; }
+      } else if (isLead){
+        // Lead → supporting (move to supporting)
+        p.lead = null;
+        if (p.supporting.length < 2) p.supporting.push(id);
+        else p.lead = null;
+      } else {
+        // In supporting → remove
+        p.supporting.splice(supportIdx, 1);
+      }
+      debouncedSave();
+      paintPhotoTiles();
+    });
+  });
+}
+function paintPhotoTiles(){
+  const p = state.responses.visual.photography;
+  document.querySelectorAll('#photo-grid .photo-tile').forEach(t => {
+    const id = parseInt(t.getAttribute('data-photo'));
+    t.classList.remove('lead','support');
+    const badge = t.querySelector('.badge');
+    badge.textContent = '';
+    if (p.lead === id){ t.classList.add('lead'); badge.textContent = '1'; }
+    const si = p.supporting.indexOf(id);
+    if (si >= 0){ t.classList.add('support'); badge.textContent = (si+2).toString(); }
+  });
+}
+function bindPaletteCards(){
+  document.querySelectorAll('#palette-grid .palette-card').forEach(c => {
+    c.addEventListener('click', () => {
+      const v = c.getAttribute('data-palette');
+      state.responses.visual.palette = v;
+      debouncedSave();
+      paintPaletteCards();
+    });
+  });
+  paintPaletteCards();
+}
+function paintPaletteCards(){
+  const v = state.responses.visual.palette;
+  document.querySelectorAll('#palette-grid .palette-card').forEach(c => {
+    c.classList.toggle('selected', c.getAttribute('data-palette') === v);
+  });
+}
+
+/* =========================================================
+   §5 Positioning maps
+   ========================================================= */
+
+const MAPS = [
+  {id:'map1', n:'1', title:'Clinical ↔ Spiritual × Method-branded ↔ Founder-branded',
+   axes:'<p><strong>Horizontal:</strong> on the left, the brand reads as a clinical-physiotherapy-style chronic-pain practice. On the right, it reads as a spiritual / mind-body / breath-and-imagery practice. Both are real choices — Aarti\'s training holds both.</p><p><strong>Vertical:</strong> top, the brand is the Method (BodyTalk, "the Method", trademark-led). Bottom, the brand is the Founder (Aarti\'s name on the door, her face in every reel).</p>',
+   labels:{top:'Method-branded', bottom:'Founder-branded', left:'Clinical', right:'Spiritual'}},
+  {id:'map2', n:'2', title:'Premium-access ↔ Mass-access × Performance ↔ Healing',
+   axes:'<p><strong>Horizontal:</strong> on the left, performance-oriented (continued capability, longevity, athleticism). On the right, healing-oriented (relief, recovery, mind-body work).</p><p><strong>Vertical:</strong> top, premium-gated (referral-only, waitlist, ₹2k+/session). Bottom, mass-access (open booking, ₹500-700/class group, online subscription).</p>',
+   labels:{top:'Premium-access', bottom:'Mass-access', left:'Performance', right:'Healing'}},
+  {id:'map3', n:'3', title:'Lineage-signalled ↔ Originality-signalled × India-rooted ↔ Global-imported',
+   axes:'<p><strong>Horizontal:</strong> on the left, lineage-signalled (Balanced Body / Michael King / APPI / Moushumi / Breathe / NOI named at every turn). On the right, originality-signalled (a new method, a new vocabulary, less reverence to predecessors).</p><p><strong>Vertical:</strong> top, India-rooted (Pune named, Sanskrit used selectively, Indian-aesthetic visible). Bottom, global-imported (international register, English-only, looks like it could be in Tribeca).</p>',
+   labels:{top:'India-rooted', bottom:'Global-imported', left:'Lineage-signalled', right:'Originality-signalled'}},
+];
+
+function renderMaps(){
+  const wrap = document.getElementById('maps-list');
+  wrap.innerHTML = '';
+  MAPS.forEach((m, idx) => {
+    const data = state.responses.positioning[m.id];
+    const card = document.createElement('div');
+    card.className = 'map-card';
+    card.innerHTML = `
+      <h3 class="subhead">Map ${m.n} — ${m.title}</h3>
+      <div class="map-axes-prose">${m.axes}</div>
+      <div class="position-map" data-map="${m.id}">
+        <span class="axis-label top">${m.labels.top}</span>
+        <span class="axis-label bottom">${m.labels.bottom}</span>
+        <span class="axis-label left">${m.labels.left}</span>
+        <span class="axis-label right">${m.labels.right}</span>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="50" y1="0" x2="50" y2="100" stroke="#d9d3c5" stroke-width="0.4"/>
+          <line x1="0" y1="50" x2="100" y2="50" stroke="#d9d3c5" stroke-width="0.4"/>
+          <g class="dots-${m.id}"></g>
+        </svg>
+      </div>
+      <div class="dot-legend">
+        <div class="dot-key"><span class="swatch today"></span> Today <button class="reset" data-reset="${m.id}-today">Reset</button></div>
+        <div class="dot-key"><span class="swatch target"></span> Target (24mo) <button class="reset" data-reset="${m.id}-target">Reset</button></div>
+        <span class="muted" style="margin-left:auto;font-size:13px">Click the map to place dots — first click = today, second click = target. Click again to overwrite.</span>
+      </div>
+    `;
+    wrap.appendChild(card);
+    const mapEl = card.querySelector('.position-map');
+    mapEl.addEventListener('click', (ev) => {
+      const r = mapEl.getBoundingClientRect();
+      const x = ((ev.clientX - r.left) / r.width) * 100;
+      const y = ((ev.clientY - r.top) / r.height) * 100;
+      const cur = state.responses.positioning[m.id];
+      if (!cur.today) cur.today = [Math.round(x), Math.round(100-y)];
+      else if (!cur.target) cur.target = [Math.round(x), Math.round(100-y)];
+      else { cur.today = [Math.round(x), Math.round(100-y)]; cur.target = null; }
+      debouncedSave();
+      paintMapDots(m.id);
+    });
+    card.querySelectorAll('.reset').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const k = btn.getAttribute('data-reset');
+        const [mid, which] = k.split('-');
+        state.responses.positioning[mid][which] = null;
+        debouncedSave();
+        paintMapDots(mid);
+      });
+    });
+    paintMapDots(m.id);
+  });
+}
+function paintMapDots(mid){
+  const data = state.responses.positioning[mid];
+  const g = document.querySelector(`.dots-${mid}`);
+  if (!g) return;
+  g.innerHTML = '';
+  if (data.today){
+    const [x, y] = data.today;
+    g.insertAdjacentHTML('beforeend', `<circle class="dot-today" cx="${x}" cy="${100-y}" r="2.4"/>`);
+  }
+  if (data.target){
+    const [x, y] = data.target;
+    g.insertAdjacentHTML('beforeend', `<circle class="dot-target" cx="${x}" cy="${100-y}" r="2.4"/>`);
+  }
+}
+
+/* =========================================================
+   §7 Customer — personas + per-persona notes
+   ========================================================= */
+
+const PERSONAS = [
+  {id:'WellReadMother', title:'The Well-Read Working Mother', body:'Late-30s to 40s. Mother of school-age kids. Often migrated to Pune. Runs or volunteers in NGO / sustainability / education work. Came for chronic back pain after physio didn\'t transfer. Reads Murakami, watches her stocks, deletes Instagram during the work week. <em>Janhavi-type.</em>'},
+  {id:'FitnessMaximalist', title:'The Fitness Maximalist', body:'Early 40s. Works in business development / sales / corporate. 2-3 hours of physical practice daily across multiple disciplines. Doesn\'t come for pain; uses pilates as the form-anchor that makes everything else work. WhatsApp-only on social. <em>Saneya-type.</em>'},
+  {id:'EntrepreneurAbroad', title:'The Entrepreneur Abroad', body:'40s. Indian diaspora — US, UK, Singapore. Founder of a tech or wellness venture. Long-time friend or referral. Does sessions with you remotely or when visiting India. Lives on LinkedIn and podcasts. Often the brand\'s most vocal advocate. <em>Ayesha-type.</em>'},
+  {id:'ExecutiveProfessional', title:'The Executive Professional', body:'30s-60s. All genders. Mid-to-senior corporate — pharma, consulting, wealth, sports. Time-strapped. Came specifically for chronic pain — desk-job, travel-demands, sports injury. Tried ortho, physio, medication. <em>Hitendra / Namrata-Sunil / cricketer-type.</em>'},
+];
+
+function renderPersonas(){
+  const wrap = document.getElementById('persona-rank');
+  const order = getVal('customer.personaRank');
+  drawRankList(wrap, order, PERSONAS, 'customer.personaRank', paintPersonaNotes);
+  // Re-render notes section reflecting current order
+  paintPersonaNotes();
+}
+function paintPersonaNotes(){
+  const wrap = document.getElementById('persona-notes');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const order = getVal('customer.personaRank');
+  order.forEach(pid => {
+    const p = PERSONAS.find(x => x.id === pid);
+    const v = getVal('customer.personaNotes.' + pid) || '';
+    const div = document.createElement('div');
+    div.className = 'persona-note-block';
+    div.innerHTML = `
+      <div class="pn-name">${p.title}</div>
+      <textarea data-key="customer.personaNotes.${pid}" rows="3">${v}</textarea>
+    `;
+    wrap.appendChild(div);
+  });
+  bindTextareas(wrap);
+}
+
+/* =========================================================
+   §9 Pain belief drag-rank
+   ========================================================= */
+
+const PAIN_BELIEFS = [
+  {id:'structural', body:'Pain is structural — tissue damage, biomechanics, alignment.'},
+  {id:'neural', body:'Pain is neural — central sensitisation, top-down modulation, the brain\'s prediction.'},
+  {id:'emotional', body:'Pain is emotional — stress, fear, history, what the body is holding.'},
+  {id:'spiritual', body:'Pain is spiritual — the body\'s larger conversation with the self.'},
+  {id:'multi', body:'Pain is multi-causal — never one thing; always at least three at once.'},
+];
+
+function renderPainBeliefRank(){
+  const wrap = document.getElementById('pain-belief-rank');
+  const order = getVal('register.painBeliefRank');
+  drawRankList(wrap, order, PAIN_BELIEFS, 'register.painBeliefRank');
+}
+
+/* =========================================================
+   Generic input binding
+   ========================================================= */
+
+function bindInputs(){
+  // text + number inputs
+  document.querySelectorAll('input[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (el.type === 'range'){
+      const v = getVal(key);
+      if (v != null) el.value = v;
+      const readout = el.parentElement.querySelector('.readout');
+      if (readout) readout.textContent = el.value;
+      el.addEventListener('input', () => {
+        setVal(key, parseInt(el.value));
+        if (readout) readout.textContent = el.value;
+      });
+    } else if (el.type === 'number'){
+      const v = getVal(key);
+      if (v != null) el.value = v;
+      el.addEventListener('input', () => {
+        const n = parseInt(el.value);
+        setVal(key, isNaN(n) ? null : n);
+      });
+    } else if (el.type === 'text'){
+      const v = getVal(key);
+      if (v != null) el.value = v;
+      el.addEventListener('input', () => setVal(key, el.value));
+    }
+  });
+}
+function bindTextareas(scope){
+  scope = scope || document;
+  scope.querySelectorAll('textarea[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    const v = getVal(key);
+    if (v != null && el.value === '') el.value = v;
+    if (!el._bound){
+      el._bound = true;
+      el.addEventListener('input', () => {
+        setVal(key, el.value);
+        // Word counter if applicable
+        const wcLimit = el.getAttribute('data-wordcount');
+        if (wcLimit){
+          const counter = el.parentElement.querySelector('.wc-current');
+          const max = parseInt(wcLimit);
+          const n = el.value.trim().split(/\s+/).filter(Boolean).length;
+          if (counter) counter.textContent = n;
+          const wcWrap = counter && counter.closest('.word-counter');
+          if (wcWrap){ wcWrap.classList.toggle('over', n > max); }
+        }
+      });
+      // Initial counter
+      const wcLimit = el.getAttribute('data-wordcount');
+      if (wcLimit){
+        const counter = el.parentElement.querySelector('.wc-current');
+        if (counter){ const n = el.value.trim().split(/\s+/).filter(Boolean).length; counter.textContent = n; }
+      }
+    }
+  });
+}
+
+/* Radio rows + radio cards */
+function bindRadios(){
+  // Radio rows (compact radio + descriptive radio)
+  document.querySelectorAll('.radio-row[data-key]').forEach(row => {
+    const key = row.getAttribute('data-key');
+    const v = getVal(key);
+    row.querySelectorAll('input[type="radio"]').forEach(r => {
+      if (r.value === v) r.checked = true;
+      r.addEventListener('change', () => { if (r.checked) setVal(key, r.value); });
+    });
+  });
+  // Radio cards
+  document.querySelectorAll('.radio-cards[data-key]').forEach(group => {
+    const key = group.getAttribute('data-key');
+    const v = getVal(key);
+    group.querySelectorAll('.radio-card').forEach(card => {
+      const cv = card.getAttribute('data-value');
+      if (cv === v) card.classList.add('selected');
+      const radio = card.querySelector('input[type="radio"]');
+      if (radio && cv === v) radio.checked = true;
+      card.addEventListener('click', () => {
+        group.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        if (radio) radio.checked = true;
+        setVal(key, cv);
+      });
+    });
+  });
+}
+
+/* Commit checkboxes (§13) */
+function bindCommitments(){
+  const c = state.responses.founderStory.commitments;
+  document.querySelectorAll('#commit-list input[type="checkbox"], #optout-card input[type="checkbox"]').forEach(box => {
+    const id = box.getAttribute('data-commit');
+    if (c[id]) box.checked = true;
+    box.addEventListener('change', () => {
+      c[id] = box.checked;
+      // Visual: opt-out card highlight
+      if (id === 'optOut'){
+        const oc = document.getElementById('optout-card');
+        oc.classList.toggle('selected', box.checked);
+      }
+      debouncedSave();
+    });
+  });
+  if (c.optOut) document.getElementById('optout-card').classList.add('selected');
+}
+
+/* =========================================================
+   §15 Review — build summary
+   ========================================================= */
+
+function buildSummary(){
+  const wrap = document.getElementById('summary-list');
+  wrap.innerHTML = '';
+  const r = state.responses;
+
+  const summaries = [
+    {sec:'1', title:'Brand character', content:
+      `Must-be: ${r.character.mustBe.join(' · ') || '—'}\nMust-never-be: ${r.character.mustNeverBe.join(' · ') || '—'}`
+    },
+    {sec:'2', title:'Personality and tone', content:
+      `Sliders → Tone:${r.personality.sliders.tone} · Register:${r.personality.sliders.register} · Era:${r.personality.sliders.era} · Voice authorship:${r.personality.sliders.voiceAuthorship} · Energy:${r.personality.sliders.energy}\nVoice rank → ${r.personality.voiceRank.join(' · ')}`
+    },
+    {sec:'3', title:'Moodboard', content:
+      ['W1','W2','W3','W4','W5'].map(w => {
+        const o = r.moodboard[w];
+        return `${w} ${WORLDS.find(x=>x.id===w).title}: ${o.rating}★`;
+      }).join('\n') + (r.moodboard.missingDirection ? `\nMissing: ${r.moodboard.missingDirection}` : '')
+    },
+    {sec:'4', title:'Visual preferences', content:
+      `Typography → Family:${r.visual.typography.family} · Skeleton:${r.visual.typography.skeleton} · Mood:${r.visual.typography.mood} · Decoration:${r.visual.typography.decoration}\nPhotography lead:${r.visual.photography.lead || '—'} · supporting:${r.visual.photography.supporting.join(',') || '—'}\nPalette: ${r.visual.palette || '—'}`
+    },
+    {sec:'5', title:'Positioning maps', content:
+      ['map1','map2','map3'].map(m => {
+        const o = r.positioning[m];
+        return `${m}: today=${o.today?o.today.join(','):'—'} · target=${o.target?o.target.join(','):'—'}`;
+      }).join('\n')
+    },
+    {sec:'6', title:'Competitors', content:
+      `Movement: ${r.competitors.movement.substring(0,140) || '—'}\nAdjacent: ${r.competitors.adjacent.substring(0,140) || '—'}`
+    },
+    {sec:'7', title:'The customer', content:
+      `Persona rank: ${r.customer.personaRank.map(p=>p).join(' · ')}\nPath slider: ${r.customer.pathSlider} (0=pain · 100=social)\nRefusal: ${r.customer.refusal.substring(0,120) || '—'}`
+    },
+    {sec:'8', title:'The name', content:
+      `Direction: ${r.nameChoice.direction || '—'}\nPilatesWithAarti attachment: ${r.nameChoice.attachmentPilatesWithAarti} · BodyTalk attachment: ${r.nameChoice.attachmentBodyTalk}\nMethod placeholder: ${r.nameChoice.methodPlaceholder.substring(0,80) || '—'}`
+    },
+    {sec:'9', title:'Clinical · Indian · Lineage', content:
+      `Pain belief rank: ${r.register.painBeliefRank.join(' · ')}\nClinical-Somatic: ${r.register.clinicalSomatic} · Indianness: ${r.register.indianness} · Lineage: ${r.register.lineage}`
+    },
+    {sec:'10', title:'Pricing', content:
+      `1:1 12-pack: ₹${r.pricing.oneToOnePack || '—'} · Cohort: ₹${r.pricing.signatureCohort || '—'} · Capsule: ₹${r.pricing.corporateCapsule || '—'} · Exec: ₹${r.pricing.execIntensive || '—'} · Retreat: ₹${r.pricing.retreat || '—'}\nRaise comfort: ${r.pricing.raiseComfort} · Discount: ${r.pricing.discountPosture} · Free trial: ${r.pricing.freeTrial} · Refund: ${r.pricing.refundPolicy} · Public pricing: ${r.pricing.publicPricing}`
+    },
+    {sec:'11', title:'Space & service', content:
+      `Scent:${r.space.scent} · Sound:${r.space.sound} · Light:${r.space.light}\nReply:${r.space.replyTime} · Phone:${r.space.phoneAnswer} · Cancel:${r.space.cancellation}`
+    },
+    {sec:'12', title:'Influences', content:
+      `Movement: ${r.influences.movement.substring(0,80) || '—'}\nWellness: ${r.influences.wellness.substring(0,80) || '—'}\nAnti-aspiration: ${r.influences.antiAspiration.substring(0,80) || '—'}`
+    },
+    {sec:'13', title:'Founder story + visibility', content:
+      (() => {
+        const c = r.founderStory.commitments;
+        const arr = Object.entries(c).filter(([k,v]) => v && k !== 'optOut').map(([k]) => k);
+        return `Commitments: ${arr.length ? arr.join(' · ') : (c.optOut ? 'Opt-out (institution-led, not founder-led)' : '—')}`;
+      })()
+    },
+    {sec:'14', title:'Road ahead', content:
+      `5-year vision: ${r.roadAhead.fiveYearVision || '—'}\n100-grad KPI: ${r.roadAhead.hundredGradsKPI.substring(0,140) || '—'}`
+    },
+  ];
+
+  summaries.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'summary-card';
+    card.innerHTML = `
+      <div class="sc-section">§${s.sec} · ${s.title}</div>
+      <div class="sc-content">${s.content || '<em>—</em>'}</div>
+      <button class="sc-edit" data-edit="${s.sec}">Edit ✎</button>
+    `;
+    card.querySelector('.sc-edit').addEventListener('click', () => showSection(s.sec));
+    wrap.appendChild(card);
+  });
+}
+
+/* =========================================================
+   Submit
+   ========================================================= */
+
+async function submitForm(){
+  if (!state.responses.session.uuid){
+    state.responses.session.uuid = crypto.randomUUID ? crypto.randomUUID() : ('s-' + Date.now());
+  }
+  state.responses.session.submittedAt = new Date().toISOString();
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try {
+    if (CONFIG.webhookUrl.includes('CHANGE-ME')){
+      // Dev path: just simulate success and log payload
+      console.log('[DEV] Would POST to webhook. Payload:', state.responses);
+      await new Promise(r => setTimeout(r, 600));
+    } else {
+      const resp = await fetch(CONFIG.webhookUrl, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(state.responses),
+      });
+      if (!resp.ok) throw new Error('Webhook returned ' + resp.status);
+    }
+    document.getElementById('ty-name').textContent = state.responses.name || 'Aarti';
+    showSection('thanks');
+  } catch(e){
+    console.error(e);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit conversation →';
+    showError('Submission failed. Your responses are saved locally — try again or message Adi directly.');
+  }
+}
+
+/* =========================================================
+   Init
+   ========================================================= */
+
+function init(){
+  loadState();
+  // Generate session UUID if first run
+  if (!state.responses.session.uuid){
+    state.responses.session.uuid = crypto.randomUUID ? crypto.randomUUID() : ('s-' + Date.now());
+    state.responses.session.startedAt = new Date().toISOString();
+  }
+
+  // Render dynamic sections
+  renderChips(document.getElementById('must-be-pool'), MUST_BE_POOL, 'character.mustBe', document.getElementById('must-be-counter'));
+  renderChips(document.getElementById('must-not-pool'), MUST_NOT_POOL, 'character.mustNeverBe', document.getElementById('must-not-counter'), 'must-not');
+  renderPersonalitySliders();
+  renderVoiceRank();
+  renderWorlds();
+  renderMaps();
+  renderPersonas();
+  renderPainBeliefRank();
+
+  // Bind generic inputs (must come after dynamic rendering)
+  bindInputs();
+  bindTextareas();
+  bindRadios();
+  bindPhotoGrid();
+  paintPhotoTiles();
+  bindPaletteCards();
+  bindCommitments();
+
+  // Welcome name field
+  const nameInput = document.getElementById('name-input');
+  if (nameInput){
+    nameInput.value = state.responses.name || 'Aarti Jhunjhunwala';
+    nameInput.addEventListener('input', () => state.responses.name = nameInput.value);
+  }
+
+  // Buttons
+  document.querySelectorAll('[data-go]').forEach(b => {
+    b.addEventListener('click', () => showSection(b.getAttribute('data-go')));
+  });
+  document.getElementById('back-btn').addEventListener('click', prevSection);
+  document.getElementById('next-btn').addEventListener('click', nextSection);
+  document.getElementById('submit-btn').addEventListener('click', submitForm);
+  document.getElementById('save-link').addEventListener('click', () => {
+    saveState();
+    const url = location.origin + location.pathname + '?s=' + state.responses.session.uuid;
+    if (navigator.clipboard){
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Save-and-resume URL copied to clipboard.\n\n' + url);
+      }, () => { alert('Saved. Re-open this URL to continue:\n\n' + url); });
+    } else {
+      alert('Saved. Re-open this URL to continue:\n\n' + url);
+    }
+  });
+
+  // Restore section
+  showSection(state.currentSection || 'welcome');
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

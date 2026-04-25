@@ -1,0 +1,92 @@
+{
+  "W1": {
+    "title": "Clinical Lineage",
+    "subtitle": "Science meets archive. Pilates as a discipline, handled with rigour and reverence.",
+    "indices": [
+      2,
+      4,
+      3,
+      1,
+      5
+    ],
+    "captions": [
+      "Vintage Pilates \u00b7 vintagepilates.com",
+      "SOUKYA \u00b7 soukya.com",
+      "Vintage Pilates \u00b7 vintagepilates.com",
+      "Polestar Pilates \u00b7 polestarpilates.com",
+      "SOUKYA \u00b7 soukya.com"
+    ]
+  },
+  "W2": {
+    "title": "Somatic Atelier",
+    "subtitle": "The studio as an inner room rather than an outer gym. Sensory, architectural, ritual.",
+    "indices": [
+      1,
+      6,
+      3,
+      2,
+      4
+    ],
+    "captions": [
+      "The Class \u00b7 theclass.com",
+      "Aesop \u00b7 aesop.com",
+      "Forma Pilates \u00b7 formapilates.co",
+      "The Class \u00b7 theclass.com",
+      "Forma Pilates \u00b7 formapilates.co"
+    ]
+  },
+  "W3": {
+    "title": "Sacred Pune",
+    "subtitle": "Indian-rooted, meditative, unmistakably local. The palace register translated to a city studio.",
+    "indices": [
+      8,
+      3,
+      5,
+      1,
+      7
+    ],
+    "captions": [
+      "Raw Mango \u00b7 rawmango.com",
+      "Katonah Yoga \u00b7 katonahyoga.com",
+      "Six Senses \u00b7 sixsenses.com",
+      "Ananda \u00b7 anandaspa.com",
+      "Raw Mango \u00b7 rawmango.com"
+    ]
+  },
+  "W4": {
+    "title": "Longevity Performance",
+    "subtitle": "Functional, data-forward. For the high-performing 50-year-old who wants to keep moving.",
+    "indices": [
+      3,
+      7,
+      4,
+      1,
+      8
+    ],
+    "captions": [
+      "Bodyism \u00b7 bodyism.com",
+      "Equinox \u00b7 equinox.com",
+      "Bodyism \u00b7 bodyism.com",
+      "The Ready State \u00b7 thereadystate.com",
+      "Hyperice \u00b7 hyperice.com"
+    ]
+  },
+  "W5": {
+    "title": "Editorial Wellness",
+    "subtitle": "Quarterly-magazine premium. Long reads, full-bleed photography, generous white space.",
+    "indices": [
+      1,
+      4,
+      6,
+      5,
+      2
+    ],
+    "captions": [
+      "Atmantan \u00b7 atmantan.com",
+      "Cereal \u00b7 readcereal.com",
+      "Aman \u00b7 aman.com",
+      "Aman \u00b7 aman.com",
+      "Kinfolk \u00b7 kinfolk.com"
+    ]
+  }
+}
