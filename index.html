@@ -331,6 +331,18 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.7}
 }
 .slider-ends span:first-child{text-align:left}
 .slider-ends span:last-child{text-align:right}
+.slider-end-hints{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-family:var(--sans);
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.45;
+  margin:6px 0 4px;
+}
+.slider-end-hints .left{text-align:left;flex:1;max-width:48%}
+.slider-end-hints .right{text-align:right;flex:1;max-width:48%}
 input[type="range"]{
   width:100%;
   -webkit-appearance:none;
@@ -549,11 +561,11 @@ input[type="range"]::-moz-range-thumb{
 
 .photo-grid{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr 1fr;
-  gap:14px;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
   margin:18px 0;
 }
-@media (max-width:900px){.photo-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.photo-grid{grid-template-columns:1fr}}
 .photo-tile{
   position:relative;
   aspect-ratio:4/3;
@@ -640,7 +652,7 @@ input[type="range"]::-moz-range-thumb{
 /* ========== Positioning maps ========== */
 
 .map-card{
-  margin:48px 0;
+  margin:48px 0 64px;
   padding:0;
 }
 .map-card h3{margin-top:0}
@@ -648,37 +660,70 @@ input[type="range"]::-moz-range-thumb{
   background:var(--card);
   border:1px solid var(--hairline);
   padding:18px 22px;
-  margin:14px 0 22px;
+  margin:14px 0 32px;
   font-size:14px;
   line-height:1.6;
 }
 .map-axes-prose p{margin:8px 0}
 .map-axes-prose strong{font-weight:500}
+
+/* Frame around the map with axes OUTSIDE the box */
+.map-frame{
+  display:grid;
+  grid-template-columns:48px 1fr 48px;
+  grid-template-rows:36px 1fr 36px;
+  max-width:660px;
+  margin:0 auto;
+  gap:6px;
+}
+.ax-label{
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.ax-top{grid-column:2;grid-row:1;text-align:center;align-self:end;}
+.ax-bottom{grid-column:2;grid-row:3;text-align:center;align-self:start;}
+.ax-left{
+  grid-column:1;grid-row:2;
+  align-self:center;justify-self:center;
+  transform:rotate(-90deg);
+  white-space:nowrap;
+  width:max-content;
+}
+.ax-right{
+  grid-column:3;grid-row:2;
+  align-self:center;justify-self:center;
+  transform:rotate(90deg);
+  white-space:nowrap;
+  width:max-content;
+}
 .position-map{
+  grid-column:2;grid-row:2;
   position:relative;
   background:var(--card);
   border:1px solid var(--hairline);
   aspect-ratio:1;
-  max-width:600px;
-  margin:0 auto;
+  width:100%;
   cursor:crosshair;
 }
 .position-map svg{position:absolute;inset:0;width:100%;height:100%}
-.position-map .axis-label{
-  position:absolute;
-  font-family:var(--sans);
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-  pointer-events:none;
-}
-.position-map .axis-label.top{top:8px;left:50%;transform:translateX(-50%)}
-.position-map .axis-label.bottom{bottom:8px;left:50%;transform:translateX(-50%)}
-.position-map .axis-label.left{left:8px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left center}
-.position-map .axis-label.right{right:8px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center}
 .position-map circle.dot-today{fill:#0f2a44}
 .position-map circle.dot-target{fill:var(--accent)}
+.position-map circle.ref-dot{fill:#a8a193;opacity:.55}
+.position-map text.ref-label{
+  fill:#6b635a;
+  font-family:'Inter',sans-serif;
+  font-size:2.6px;
+  font-weight:500;
+}
+@media (max-width:600px){
+  .map-frame{grid-template-columns:32px 1fr 32px;grid-template-rows:28px 1fr 28px}
+  .ax-label{font-size:12px}
+  .position-map text.ref-label{font-size:3px}
+}
 .dot-legend{
   display:flex;
   gap:24px;
@@ -895,35 +940,43 @@ input[type="range"]::-moz-range-thumb{
 <section data-section="welcome">
   <div class="wrap welcome-screen">
     <div class="lead-meta">
-      <span>A brand discovery conversation</span>
+      <span>A conversation between us</span>
       <span>·</span>
-      <span>30-35 minutes</span>
+      <span>About thirty-five minutes</span>
     </div>
-    <h1 class="title">BodyTalk × Pilates with Aarti</h1>
-    <p class="intro large">
-      This is a 30-35 minute conversation about who the brand is for, what it sounds like, and what it stands on. Most of the questions have no right answer — we're trying to find yours. A few of the questions are uncomfortable on purpose; those are the ones worth answering carefully.
+    <h1 class="title">Dear Aarti,</h1>
+    <p class="intro large" style="margin-bottom:18px">
+      This is the conversation we'd have on a long evening with no one else around — about who you teach for, what the practice is becoming, and what we put on the door. I've turned it into a form so the answers are written down. Take your time. There are no right answers — we're looking for yours.
+    </p>
+    <p class="intro" style="margin-bottom:32px">
+      About thirty-five minutes if you go at a good pace. You can stop and come back to it — the form remembers where you left. A few of the questions are uncomfortable on purpose; those are the ones worth sitting with for a minute longer.
     </p>
 
     <div class="callout">
-      <div class="eyebrow" style="margin-bottom:14px">What this stands on</div>
+      <div class="eyebrow" style="margin-bottom:14px">Five things this whole conversation stands on</div>
       <ol>
-        <li><strong>The practice is the proof.</strong> Thirty years in fitness. Twenty-three in pilates. Balanced Body, Michael King, APPI, the Breathe Diploma, NOI's Explain Pain and Bodily Relearning, and a multi-year apprenticeship with Moushumi. Two thousand-plus people. Everything else grows from here.</li>
-        <li><strong>Pain is not purely physical.</strong> This is your stated belief and the foundation of the chronic-pain + mind-body chapter we're now in.</li>
+        <li><strong>The practice is the proof.</strong> Thirty years in fitness. Twenty-three in pilates. Balanced Body, Michael King, APPI, the Breathe Diploma, NOI's Explain Pain and Bodily Relearning, and a multi-year apprenticeship with Moushumi. Two thousand-plus people you've taught. Everything else grows from here — not above it.</li>
+        <li><strong>Pain is not purely physical.</strong> Your stated belief. The foundation of the chronic-pain + mind-body chapter we're now in.</li>
         <li><strong>The body that comes home with you is the practice.</strong> <em>"One hour affects 23."</em> The brand is built on what people take out of the room.</li>
         <li><strong>The lineage gets named, out loud.</strong> Balanced Body, Michael King, APPI, Moushumi, Breathe, NOI. We say the names.</li>
         <li><strong>What's on the door is the live question.</strong> BodyTalk-as-master, a new umbrella, or PilatesWithAarti — we'll find the answer in this conversation, not before.</li>
       </ol>
     </div>
 
-    <div class="field">
-      <label class="label" for="name-input">How do you want your name to read on the final brand materials?</label>
+    <p class="intro" style="margin-top:36px;margin-bottom:18px">
+      One small thing before we start — how you'd like your name to read on the final brand materials. The default below is fine; change it if you want something shorter.
+    </p>
+
+    <div class="field" style="margin-top:0">
       <input type="text" id="name-input" value="Aarti Jhunjhunwala" data-key="name">
-      <div class="hint">Aarti, Aarti Jhunjhunwala, Aarti J., or another version.</div>
+      <div class="hint">Aarti · Aarti Jhunjhunwala · Aarti J. · or another version of your choice.</div>
     </div>
 
     <div style="margin-top:48px">
-      <button class="btn btn-large" data-go="1">Begin →</button>
+      <button class="btn btn-large" data-go="1">I'm ready — begin →</button>
     </div>
+
+    <p class="tag-line" style="margin-top:36px;text-align:left">— Adi</p>
   </div>
 </section>
 
@@ -1139,6 +1192,12 @@ input[type="range"]::-moz-range-thumb{
     <div class="field">
       <label class="label">Non-pilates brands whose posture you'd like Aarti's brand to read like. Wellness, design, hospitality, publishing — anywhere.</label>
       <textarea data-key="competitors.adjacent" rows="6" placeholder="e.g. Aesop · Kinfolk · Ananda · Raw Mango · Aman Resorts · …"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">If a new pilates / chronic-pain studio opened in Pune next year and started taking clients you respect — what would they have done that you'd quietly admire? And what would they have done that you'd refuse to copy?</label>
+      <div class="hint" style="margin-bottom:8px">The point of the question: what does competition look like when it shows up — and what do we hold the line on regardless.</div>
+      <textarea data-key="competitors.hypothetical" rows="5" placeholder="What you'd admire ↓ then ↓ what you'd refuse to copy"></textarea>
     </div>
   </div>
 </section>
@@ -1655,7 +1714,8 @@ input[type="range"]::-moz-range-thumb{
 
     <div style="text-align:left;margin:48px 0 0">
       <button class="btn btn-large" id="submit-btn">Submit conversation →</button>
-      <p class="note" style="margin-top:18px">This sends a structured email to Adi. Phase 1 closes when this lands.</p>
+      <button class="btn-ghost" id="download-json-btn" style="margin-left:16px;border:1px solid var(--hairline);padding:14px 22px;">↓ Download responses (JSON)</button>
+      <p class="note" style="margin-top:18px">Submit sends a structured email to Adi (with the JSON attached). Download keeps a local copy in the same format. Phase 1 closes when this lands.</p>
     </div>
   </div>
 </section>
@@ -1748,8 +1808,8 @@ const state = {
     },
     competitors: {movement:'', adjacent:''},
     customer: {
-      personaRank:['WellReadMother','FitnessMaximalist','EntrepreneurAbroad','ExecutiveProfessional'],
-      personaNotes:{WellReadMother:'',FitnessMaximalist:'',EntrepreneurAbroad:'',ExecutiveProfessional:''},
+      personaRank:['WellReadMother','PainSeekingMidLifer','ExecutiveProfessional','FitnessMaximalist','EntrepreneurAbroad'],
+      personaNotes:{WellReadMother:'',PainSeekingMidLifer:'',ExecutiveProfessional:'',FitnessMaximalist:'',EntrepreneurAbroad:''},
       pathSlider:50,
       pathNotes:'',
       refusal:'',
@@ -2028,11 +2088,21 @@ function updateCounter(el, n){
    ========================================================= */
 
 const PERSONALITY_SLIDERS = [
-  {key:'personality.sliders.tone', label:'Tone', left:'Clinical', right:'Somatic', hint:'clinical = anatomy, evidence, physiology language. somatic = breath, presence, embodiment language.'},
-  {key:'personality.sliders.register', label:'Register', left:'Austere', right:'Lyrical', hint:'austere = sparse, factual, restrained. lyrical = image-rich, expressive, warm.'},
-  {key:'personality.sliders.era', label:'Era', left:'Classical', right:'Modern', hint:'classical = lineage-reverent, traditional repertoire respected. modern = contemporary, integrative, willing to mix.'},
-  {key:'personality.sliders.voiceAuthorship', label:'Voice authorship', left:'Founder-I', right:'Brand-we', hint:'founder-I = "I started teaching in 1994…". brand-we = "We hold a small practice in Sopan Baug…".'},
-  {key:'personality.sliders.energy', label:'Energy', left:'Restrained', right:'Expressive', hint:'restrained = quiet, withholding, reads in pauses. expressive = warm, animated, reads in gestures.'},
+  {key:'personality.sliders.tone', label:'Tone', left:'Clinical', right:'Somatic',
+   leftHint:'Anatomy, evidence, physiology — the language of the lab.',
+   rightHint:'Breath, presence, embodiment — the language of the room.'},
+  {key:'personality.sliders.register', label:'Register', left:'Austere', right:'Lyrical',
+   leftHint:'Sparse, factual, restrained.',
+   rightHint:'Image-rich, expressive, warm.'},
+  {key:'personality.sliders.era', label:'Era', left:'Classical', right:'Modern',
+   leftHint:'Lineage-reverent, traditional repertoire respected.',
+   rightHint:'Contemporary, integrative, willing to mix.'},
+  {key:'personality.sliders.voiceAuthorship', label:'Voice authorship', left:'Founder-I', right:'Brand-we',
+   leftHint:'"I started teaching in 1994 in my mother\'s gym…"',
+   rightHint:'"We hold a small practice in Sopan Baug…"'},
+  {key:'personality.sliders.energy', label:'Energy', left:'Restrained', right:'Expressive',
+   leftHint:'Quiet, withholding, reads in pauses.',
+   rightHint:'Warm, animated, reads in gestures.'},
 ];
 
 const VOICE_CARDS = [
@@ -2051,8 +2121,8 @@ function renderPersonalitySliders(){
     div.className = 'slider-block';
     div.innerHTML = `
       <label class="label">${s.label}</label>
-      <div class="hint" style="margin-bottom:8px">${s.hint}</div>
       <div class="slider-ends"><span>${s.left}</span><span>${s.right}</span></div>
+      <div class="slider-end-hints"><span class="left">${s.leftHint}</span><span class="right">${s.rightHint}</span></div>
       <input type="range" min="0" max="100" value="${v}" data-key="${s.key}">
       <div class="hint slider-readout"><span class="readout">${v}</span></div>
     `;
@@ -2231,41 +2301,99 @@ function paintPaletteCards(){
 
 const MAPS = [
   {id:'map1', n:'1', title:'Clinical ↔ Spiritual × Method-branded ↔ Founder-branded',
-   axes:'<p><strong>Horizontal:</strong> on the left, the brand reads as a clinical-physiotherapy-style chronic-pain practice. On the right, it reads as a spiritual / mind-body / breath-and-imagery practice. Both are real choices — Aarti\'s training holds both.</p><p><strong>Vertical:</strong> top, the brand is the Method (BodyTalk, "the Method", trademark-led). Bottom, the brand is the Founder (Aarti\'s name on the door, her face in every reel).</p>',
-   labels:{top:'Method-branded', bottom:'Founder-branded', left:'Clinical', right:'Spiritual'}},
+   axes:'<p><strong>Horizontal:</strong> on the left, the brand reads as a clinical-physiotherapy-style chronic-pain practice. On the right, it reads as a spiritual / mind-body / breath-and-imagery practice. Both are real choices — your training holds both.</p><p><strong>Vertical:</strong> top, the brand is the Method (BodyTalk, "the Method", trademark-led). Bottom, the brand is the Founder (your name on the door, your face in every reel).</p>',
+   labels:{top:'Method-branded', bottom:'Founder-branded', left:'Clinical', right:'Spiritual'},
+   defaultToday:[42,30],
+   refs:[
+     {x:14, y:78, name:'Polestar'},
+     {x:22, y:18, name:'Vintage Pilates'},
+     {x:38, y:48, name:'Atmantan'},
+     {x:34, y:22, name:'YKBI'},
+     {x:50, y:14, name:'Forma'},
+     {x:80, y:70, name:'The Class'},
+     {x:88, y:78, name:'Katonah Yoga'},
+     {x:72, y:24, name:'Tracy Anderson'},
+   ]},
   {id:'map2', n:'2', title:'Premium-access ↔ Mass-access × Performance ↔ Healing',
    axes:'<p><strong>Horizontal:</strong> on the left, performance-oriented (continued capability, longevity, athleticism). On the right, healing-oriented (relief, recovery, mind-body work).</p><p><strong>Vertical:</strong> top, premium-gated (referral-only, waitlist, ₹2k+/session). Bottom, mass-access (open booking, ₹500-700/class group, online subscription).</p>',
-   labels:{top:'Premium-access', bottom:'Mass-access', left:'Performance', right:'Healing'}},
+   labels:{top:'Premium-access', bottom:'Mass-access', left:'Performance', right:'Healing'},
+   defaultToday:[55,55],
+   refs:[
+     {x:18, y:88, name:'Equinox'},
+     {x:28, y:90, name:'Forma'},
+     {x:50, y:80, name:'The Class'},
+     {x:55, y:90, name:'Bodyism'},
+     {x:88, y:90, name:'Ananda'},
+     {x:82, y:78, name:'Atmantan'},
+     {x:78, y:88, name:'SOUKYA'},
+     {x:14, y:18, name:'Cult.fit'},
+     {x:78, y:14, name:'Lindywell'},
+     {x:38, y:18, name:'Club Pilates'},
+   ]},
   {id:'map3', n:'3', title:'Lineage-signalled ↔ Originality-signalled × India-rooted ↔ Global-imported',
    axes:'<p><strong>Horizontal:</strong> on the left, lineage-signalled (Balanced Body / Michael King / APPI / Moushumi / Breathe / NOI named at every turn). On the right, originality-signalled (a new method, a new vocabulary, less reverence to predecessors).</p><p><strong>Vertical:</strong> top, India-rooted (Pune named, Sanskrit used selectively, Indian-aesthetic visible). Bottom, global-imported (international register, English-only, looks like it could be in Tribeca).</p>',
-   labels:{top:'India-rooted', bottom:'Global-imported', left:'Lineage-signalled', right:'Originality-signalled'}},
+   labels:{top:'India-rooted', bottom:'Global-imported', left:'Lineage-signalled', right:'Originality-signalled'},
+   defaultToday:[28,55],
+   refs:[
+     {x:10, y:14, name:'Vintage Pilates'},
+     {x:18, y:22, name:'Polestar'},
+     {x:24, y:18, name:'Pilatesology'},
+     {x:14, y:78, name:'Ananda'},
+     {x:24, y:88, name:'SOUKYA'},
+     {x:42, y:72, name:'YKBI'},
+     {x:80, y:18, name:'The Class'},
+     {x:86, y:12, name:'Tracy Anderson'},
+     {x:70, y:80, name:'Raw Mango'},
+   ]},
 ];
 
 function renderMaps(){
   const wrap = document.getElementById('maps-list');
   wrap.innerHTML = '';
-  MAPS.forEach((m, idx) => {
-    const data = state.responses.positioning[m.id];
+  MAPS.forEach((m) => {
+    // Apply default "today" position if not set yet
+    const cur = state.responses.positioning[m.id];
+    if (!cur.today && m.defaultToday){
+      cur.today = m.defaultToday.slice();
+    }
+
     const card = document.createElement('div');
     card.className = 'map-card';
+    // Build reference dots SVG fragment
+    const refDots = (m.refs || []).map(ref => {
+      const cy = 100 - ref.y;
+      // Decide label-anchor side based on x: if ref is on the right half, place label to the left
+      const right = ref.x > 60;
+      const tx = right ? ref.x - 2 : ref.x + 2;
+      const anchor = right ? 'end' : 'start';
+      return `
+        <g class="ref-grp">
+          <circle class="ref-dot" cx="${ref.x}" cy="${cy}" r="1.2"/>
+          <text class="ref-label" x="${tx}" y="${cy + 0.9}" text-anchor="${anchor}">${ref.name}</text>
+        </g>`;
+    }).join('');
+
     card.innerHTML = `
       <h3 class="subhead">Map ${m.n} — ${m.title}</h3>
       <div class="map-axes-prose">${m.axes}</div>
-      <div class="position-map" data-map="${m.id}">
-        <span class="axis-label top">${m.labels.top}</span>
-        <span class="axis-label bottom">${m.labels.bottom}</span>
-        <span class="axis-label left">${m.labels.left}</span>
-        <span class="axis-label right">${m.labels.right}</span>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="0" x2="50" y2="100" stroke="#d9d3c5" stroke-width="0.4"/>
-          <line x1="0" y1="50" x2="100" y2="50" stroke="#d9d3c5" stroke-width="0.4"/>
-          <g class="dots-${m.id}"></g>
-        </svg>
+      <div class="map-frame">
+        <div class="ax-label ax-top">${m.labels.top}</div>
+        <div class="ax-label ax-bottom">${m.labels.bottom}</div>
+        <div class="ax-label ax-left">${m.labels.left}</div>
+        <div class="ax-label ax-right">${m.labels.right}</div>
+        <div class="position-map" data-map="${m.id}">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="50" y1="0" x2="50" y2="100" stroke="#d9d3c5" stroke-width="0.4"/>
+            <line x1="0" y1="50" x2="100" y2="50" stroke="#d9d3c5" stroke-width="0.4"/>
+            <g class="refs-${m.id}">${refDots}</g>
+            <g class="dots-${m.id}"></g>
+          </svg>
+        </div>
       </div>
-      <div class="dot-legend">
+      <div class="dot-legend" style="margin-top:18px">
         <div class="dot-key"><span class="swatch today"></span> Today <button class="reset" data-reset="${m.id}-today">Reset</button></div>
         <div class="dot-key"><span class="swatch target"></span> Target (24mo) <button class="reset" data-reset="${m.id}-target">Reset</button></div>
-        <span class="muted" style="margin-left:auto;font-size:13px">Click the map to place dots — first click = today, second click = target. Click again to overwrite.</span>
+        <span class="muted" style="margin-left:auto;font-size:13px">Grey dots are reference brands. Click anywhere to place / re-place your dots.</span>
       </div>
     `;
     wrap.appendChild(card);
@@ -2274,10 +2402,10 @@ function renderMaps(){
       const r = mapEl.getBoundingClientRect();
       const x = ((ev.clientX - r.left) / r.width) * 100;
       const y = ((ev.clientY - r.top) / r.height) * 100;
-      const cur = state.responses.positioning[m.id];
-      if (!cur.today) cur.today = [Math.round(x), Math.round(100-y)];
-      else if (!cur.target) cur.target = [Math.round(x), Math.round(100-y)];
-      else { cur.today = [Math.round(x), Math.round(100-y)]; cur.target = null; }
+      const c = state.responses.positioning[m.id];
+      if (!c.today) c.today = [Math.round(x), Math.round(100-y)];
+      else if (!c.target) c.target = [Math.round(x), Math.round(100-y)];
+      else { c.today = [Math.round(x), Math.round(100-y)]; c.target = null; }
       debouncedSave();
       paintMapDots(m.id);
     });
@@ -2301,11 +2429,11 @@ function paintMapDots(mid){
   g.innerHTML = '';
   if (data.today){
     const [x, y] = data.today;
-    g.insertAdjacentHTML('beforeend', `<circle class="dot-today" cx="${x}" cy="${100-y}" r="2.4"/>`);
+    g.insertAdjacentHTML('beforeend', `<circle class="dot-today" cx="${x}" cy="${100-y}" r="2.6"/><text class="ref-label" x="${x+3}" y="${100-y+1}" style="fill:#0f2a44;font-weight:600">today</text>`);
   }
   if (data.target){
     const [x, y] = data.target;
-    g.insertAdjacentHTML('beforeend', `<circle class="dot-target" cx="${x}" cy="${100-y}" r="2.4"/>`);
+    g.insertAdjacentHTML('beforeend', `<circle class="dot-target" cx="${x}" cy="${100-y}" r="2.6"/><text class="ref-label" x="${x+3}" y="${100-y+1}" style="fill:#92432d;font-weight:600">target</text>`);
   }
 }
 
@@ -2318,6 +2446,7 @@ const PERSONAS = [
   {id:'FitnessMaximalist', title:'The Fitness Maximalist', body:'Early 40s. Works in business development / sales / corporate. 2-3 hours of physical practice daily across multiple disciplines. Doesn\'t come for pain; uses pilates as the form-anchor that makes everything else work. WhatsApp-only on social.'},
   {id:'EntrepreneurAbroad', title:'The Entrepreneur Abroad', body:'40s. Indian diaspora — US, UK, Singapore. Founder of a tech or wellness venture. Long-time friend or referral. Does sessions with you remotely or when visiting India. Lives on LinkedIn and podcasts. Often the brand\'s most vocal advocate.'},
   {id:'ExecutiveProfessional', title:'The Executive Professional', body:'30s-60s. All genders. Mid-to-senior corporate — pharma, consulting, wealth, sports. Time-strapped. Came specifically for chronic pain — desk-job, travel-demands, sports injury. Tried ortho, physio, medication.'},
+  {id:'PainSeekingMidLifer', title:'The Pain-Seeking Mid-Lifer', body:'Late 40s to 60s. Was active for years — trekking, running, tennis, golf, yoga, dance. Body has started saying no. Came specifically because pain is robbing them of activities they love — a holiday walk, a weekly tennis game, climbing the stairs at home. Tried orthopaedic surgeons and physiotherapists; often given the "you have to live with it" verdict. Wants their movement life back. The relief-seeker.'},
 ];
 
 function renderPersonas(){
@@ -2556,6 +2685,21 @@ function buildSummary(){
    Submit
    ========================================================= */
 
+function downloadJSON(){
+  const payload = JSON.stringify(state.responses, null, 2);
+  const blob = new Blob([payload], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const stamp = new Date().toISOString().replace(/[:.]/g,'-').slice(0,19);
+  const safeName = (state.responses.name || 'aarti').replace(/[^a-z0-9]+/gi,'-').toLowerCase();
+  a.href = url;
+  a.download = `brand-discovery-${safeName}-${stamp}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 async function submitForm(){
   if (!state.responses.session.uuid){
     state.responses.session.uuid = crypto.randomUUID ? crypto.randomUUID() : ('s-' + Date.now());
@@ -2634,6 +2778,7 @@ function init(){
   document.getElementById('back-btn').addEventListener('click', prevSection);
   document.getElementById('next-btn').addEventListener('click', nextSection);
   document.getElementById('submit-btn').addEventListener('click', submitForm);
+  document.getElementById('download-json-btn').addEventListener('click', downloadJSON);
   document.getElementById('save-link').addEventListener('click', () => {
     saveState();
     const url = location.origin + location.pathname + '?s=' + state.responses.session.uuid;
